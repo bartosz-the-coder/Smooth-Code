@@ -1,0 +1,24 @@
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-areas:
+    "header header"
+    "nav main";
+  grid-template-rows: 80px 1fr;
+  grid-template-columns: 300px 1fr;
+}
+
+.container > header {
+  grid-area: header;
+}
+
+.container > nav {
+  grid-area: nav;
+}
+
+.container > main {
+  grid-area: main;
+  overflow-y: auto;
+  background-color: var(--main-background);
+  color: var(--text);
+}

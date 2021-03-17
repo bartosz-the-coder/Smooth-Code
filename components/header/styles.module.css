@@ -1,0 +1,14 @@
+header.app_header {
+  background-color: var(--neutralPrimary);
+  color: var(--text);
+  font-size: 2rem;
+  font-weight: 800;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header.app_header > p {
+  width: 100%;
+}

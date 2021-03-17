@@ -1,0 +1,24 @@
+:root {
+  --themePrimary: var(--yellow1);
+  --themeSecondary: red;
+  --themeTernary: green;
+}
+
+body[data-theme='light'] {
+  --neutralPrimary: var(--grey5);
+  --neutralSecondary: var(--grey4);
+  --neutralTernary: var(--grey3);
+
+  --main-background: var(--grey6);
+  --text: var(--black)
+}
+
+body[data-theme='dark'] {
+  --themePrimary: var(--yellow1);
+  --neutralPrimary: var(--grey1);
+  --neutralSecondary: var(--grey2);
+  --neutralTernary: var(--grey3);
+
+  --main-background: var(--grey2);
+  --text: var(--white)
+}
