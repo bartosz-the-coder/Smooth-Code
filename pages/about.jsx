@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import styles from "styles/About.module.css";
 
 export default function About(props) {
@@ -27,7 +28,7 @@ export default function About(props) {
       </section>
       <section>
         <h3>My&nbsp;skills</h3>
-        <ul className={styles.list}>
+        <ul className={clsx(styles.list, styles.inline_list)}>
           <li>.NET/C#</li>
           <li>React</li>
           <li>JavaScript / TypeScript</li>
@@ -38,7 +39,7 @@ export default function About(props) {
       </section>
       <section>
         <h3>Education</h3>
-        <ul className={styles.list}>
+        <ul className={clsx(styles.list, styles.inline_list)}>
           <li>Wroclaw University of Technology</li>
           <li>Czestochowa University of Technology</li>
         </ul>

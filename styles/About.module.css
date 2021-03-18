@@ -14,18 +14,23 @@ ul.list {
   flex: 5
 }
 
+ul.inline_list {
+  display: flex;
+}
+
 ul.list > li {
   display: flex;
-  justify-content: space-between;  
+  justify-content: space-between;
   align-items: center;
-  height: clamp(2rem, 3vmax, 2.5rem);
-  padding: 0 1vmax;
-  margin: 0.25rem 0;
-  font-size: clamp(0.8rem, 1.2vmax, 2rem);
   list-style-type: none;
-  background-color: var(--neutralTernary);
-  color: var(--textInv);
+  height: clamp(2rem, 3vmax, 2.5rem);
+  border: 1px solid var(--neutralSecondary);
   border-radius: 5px;
+  margin: 0.25rem 0.5rem;
+  padding: 0 1vmax;
+  background-color: var(--neutralPrimary);
+  color: var(--text);
+  font-size: clamp(0.8rem, 1.2vmax, 2rem);
 }
 
 .badge {
@@ -33,7 +38,7 @@ ul.list > li {
   color: var(--text);
   text-align: center;
   font-size: clamp(0.8rem, 0.5vmax, 1rem);
-  background-color: var(--neutralPrimary);
+  background-color: var(--neutralSecondary);
   margin: 0.5rem;
   padding: 0.25rem 0.5rem;
   border-radius: 10px;

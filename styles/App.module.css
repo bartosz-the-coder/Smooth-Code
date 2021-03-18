@@ -21,4 +21,8 @@
   overflow-y: auto;
   background-color: var(--main-background);
   color: var(--text);
+  border-left-width: 1px;
+  border-top-width: 1px;
+  border-style: solid;
+  border-color: var(--grey4);
 }
