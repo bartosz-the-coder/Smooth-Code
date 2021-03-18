@@ -10,7 +10,8 @@ body[data-theme='light'] {
   --neutralTernary: var(--grey3);
 
   --main-background: var(--grey6);
-  --text: var(--black)
+  --text: var(--black);
+  --textInv: var(--white);
 }
 
 body[data-theme='dark'] {
@@ -20,5 +21,6 @@ body[data-theme='dark'] {
   --neutralTernary: var(--grey3);
 
   --main-background: var(--grey2);
-  --text: var(--white)
+  --text: var(--white);
+  --textInv: var(--black);
 }
