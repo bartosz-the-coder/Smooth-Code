@@ -7,11 +7,13 @@
 }
 
 .container > section > h3 {
-  flex: 1 0 3vmax
+  flex: 2 0 8vmax;
+  max-width: 100px;
 }
 
 ul.list {
-  flex: 5
+  flex: 8 1;
+  padding: 0;
 }
 
 ul.inline_list {
@@ -24,7 +26,7 @@ ul.list > li {
   align-items: center;
   justify-content: space-between;
   height: clamp(2rem, 3vmax, 2.5rem);
-  min-width: 10vmin;
+  min-width: 5vmin;
   margin: 0.25rem 0.5rem;
   padding: 0 1vmax;
   background-color: var(--neutralPrimary);
@@ -32,16 +34,31 @@ ul.list > li {
   border: 1px solid var(--neutralSecondary);
   color: var(--text);
   list-style-type: none;
-  font-size: clamp(0.8rem, 1.2vmax, 2rem);
+  font-size: clamp(1rem, 1.2vmax, 2rem);
 }
 
 .badge {
   width: 125px;
   color: var(--text);
   text-align: center;
-  font-size: clamp(0.8rem, 0.5vmax, 1rem);
+  font-size: clamp(0.8rem, 0.5vmin, 1rem);
   background-color: var(--neutralSecondary);
-  margin: 0.5rem;
+  margin: 1vmin;
   padding: 0.25rem 0.5rem;
   border-radius: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .container > section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container > section > h3 {
+    flex: 1;
+  }
+
+  ul.list {
+    margin: 0;
+  }
 }
