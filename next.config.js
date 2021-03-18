@@ -14,11 +14,5 @@ module.exports = (phase, { defaultConfig }) => {
     return config;
   }
 
-  return {
-    ...config,
-    images: {
-      loader: "imgix",
-      path: "https://noop/",
-    },
-  };
+  return config;
 };
