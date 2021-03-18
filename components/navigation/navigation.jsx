@@ -10,7 +10,7 @@ export const Navigation = () => (
     <div className={styles.logo}>
       <Image
         src="/assets/logo.png"
-        alt="me"
+        alt="Smooth Code logo"
         layout="fill"
         objectFit="contain"
       />

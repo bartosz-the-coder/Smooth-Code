@@ -24,8 +24,8 @@ export default function About(props) {
       <section>
         Education
         <ul>
-          <li>Wrocław University of Technology</li>
-          <li>Częstochowa University of Technology</li>
+          <li>Wroclaw University of Technology</li>
+          <li>Czestochowa University of Technology</li>
         </ul>
       </section>
     </div>
