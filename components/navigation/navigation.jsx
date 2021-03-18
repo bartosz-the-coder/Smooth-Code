@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import clsx from "clsx";
 import { HomeIcon, ContactIcon, AboutIcon } from "components/icon";
+import { ImageLoader } from 'components/image';
 import styles from "./styles.module.css";
 
 export const Navigation = () => (
@@ -13,6 +14,7 @@ export const Navigation = () => (
         alt="Smooth Code logo"
         layout="fill"
         objectFit="contain"
+        loader={ImageLoader}
       />
     </div>
     <ul className={styles.list}>

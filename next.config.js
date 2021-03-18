@@ -14,5 +14,11 @@ module.exports = (phase, { defaultConfig }) => {
     return config;
   }
 
-  return config;
+  return {
+    ...config,
+    images: {
+      loader: "cloudinary",
+      path: "/",
+    },
+  };
 };
