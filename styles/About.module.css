@@ -16,20 +16,22 @@ ul.list {
 
 ul.inline_list {
   display: flex;
+  flex-wrap: wrap;
 }
 
 ul.list > li {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  list-style-type: none;
+  justify-content: space-between;
   height: clamp(2rem, 3vmax, 2.5rem);
-  border: 1px solid var(--neutralSecondary);
-  border-radius: 5px;
+  min-width: 10vmin;
   margin: 0.25rem 0.5rem;
   padding: 0 1vmax;
   background-color: var(--neutralPrimary);
+  border-radius: 5px;
+  border: 1px solid var(--neutralSecondary);
   color: var(--text);
+  list-style-type: none;
   font-size: clamp(0.8rem, 1.2vmax, 2rem);
 }
 

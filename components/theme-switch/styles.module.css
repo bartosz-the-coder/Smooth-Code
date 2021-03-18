@@ -2,7 +2,8 @@
   --toggle-height: 28px;
   --toggle-width: 60px;
   --thumb-size: 20px;
-  padding: 1rem;
+  display: flex;
+  padding-left: 1rem;
 }
 /* The switch - the box around the slider */
 .switch {
@@ -75,4 +76,5 @@ input:checked + .slider:before {
   display: inline-block;
   margin: auto 0.5rem;
   vertical-align: middle;
+  font-size: 1rem;
 }

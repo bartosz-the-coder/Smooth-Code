@@ -2,9 +2,23 @@ import { useState, useEffect } from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
 
+const KEY = "prefers-color-scheme";
+const LIGHT = "light";
+const DARK = "dark";
+const detectPreferedTheme = () =>
+  window.localStorage.getItem(KEY) ||
+  (window.matchMedia(`(${KEY}: ${LIGHT})`).matches ? LIGHT : DARK);
+
 export const ThemeSwitch = () => {
-  const [theme, setTheme] = useState("light");
-  const nextTheme = theme === "light" ? "dark" : "light";
+  const [theme, setTheme] = useState("");
+  const onThemeChange = () =>
+    setTheme((t) => {
+      const value = t === LIGHT ? DARK : LIGHT;
+      window.localStorage.setItem(KEY, value);
+      return value;
+    });
+
+  useEffect(() => setTheme(detectPreferedTheme), []);
 
   useEffect(() => {
     document.body.dataset.theme = theme;
@@ -13,9 +27,13 @@ export const ThemeSwitch = () => {
   return (
     <div className={styles.container}>
       <span className={styles.label}>Theme</span>
-      <label class={styles.switch}>
-        <input type="checkbox" onClick={() => setTheme(nextTheme)} />
-        <span class={clsx(styles.slider, styles.round)}></span>
+      <label className={styles.switch}>
+        <input
+          type="checkbox"
+          onClick={onThemeChange}
+          checked={theme === DARK}
+        />
+        <span className={clsx(styles.slider, styles.round)}></span>
       </label>
     </div>
   );
