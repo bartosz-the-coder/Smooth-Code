@@ -73,6 +73,6 @@ li.link > a > svg {
 div.logo {
   position: relative;
   height: 50%;
-  max-height: 300px;
-  margin: 2rem;
+  max-height: 30vmin;
+  margin: 2vmin;
 }

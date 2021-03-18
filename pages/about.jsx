@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import clsx from "clsx";
 import styles from "styles/About.module.css";
 
 export default function About(props) {
@@ -31,9 +31,10 @@ export default function About(props) {
         <ul className={clsx(styles.list, styles.inline_list)}>
           <li>.NET/C#</li>
           <li>React</li>
-          <li>JavaScript / TypeScript</li>
-          <li>CSS 3</li>
-          <li>HTML 5</li>
+          <li>JavaScript</li>
+          <li>TypeScript</li>
+          <li>CSS3</li>
+          <li>HTML5</li>
           <li>GIT</li>
         </ul>
       </section>

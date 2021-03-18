@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import clsx from "clsx";
 import { HomeIcon, ContactIcon, AboutIcon } from "components/icon";
 import { ImageLoader } from 'components/image';
+import { ThemeSwitch } from "components/theme-switch";
 import styles from "./styles.module.css";
 
 export const Navigation = () => (
@@ -31,6 +32,7 @@ export const Navigation = () => (
         Contact
       </NavLink>
     </ul>
+    <ThemeSwitch />
   </nav>
 );
 

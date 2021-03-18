@@ -11,9 +11,12 @@ export const ThemeSwitch = () => {
   }, [theme]);
 
   return (
-    <label class={styles.switch}>
-      <input type="checkbox" onClick={() => setTheme(nextTheme)} />
-      <span class={clsx(styles.slider, styles.round)}></span>
-    </label>
+    <div className={styles.container}>
+      <span className={styles.label}>Theme</span>
+      <label class={styles.switch}>
+        <input type="checkbox" onClick={() => setTheme(nextTheme)} />
+        <span class={clsx(styles.slider, styles.round)}></span>
+      </label>
+    </div>
   );
 };
