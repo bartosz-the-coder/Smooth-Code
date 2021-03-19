@@ -21,7 +21,7 @@ li.link {
   text-transform: uppercase;
   transition: opacity 0.1s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: var(--opacity);
-  font-size: large;
+  font-size: clamp(0.8rem, 3vmin, 1.5rem);
   letter-spacing: 2px;
 }
 
@@ -68,12 +68,13 @@ li.link > a {
 
 li.link > a > svg {
   margin: 0 10px;
+  flex-shrink: 0;
 }
 
 div.logo {
   position: relative;
   height: 50%;
-  max-height: 30vmin;
+  max-height: 30vmax;
   margin: 2vmin;
 }
 

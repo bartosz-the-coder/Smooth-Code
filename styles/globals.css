@@ -15,7 +15,11 @@ a {
   text-decoration: none;
 }
 
+:root {
+  --color-transition: background-color 0.5s ease-out, color 0.5s ease-out
+}
+
 * {
   box-sizing: border-box;
-  transition: background-color 0.5s ease-out, color 0.5s ease-out;
+  transition: var(--color-transition);
 }
