@@ -11,4 +11,5 @@ header.app_header {
 
 header.app_header > p {
   width: 100%;
+  white-space: nowrap;
 }
