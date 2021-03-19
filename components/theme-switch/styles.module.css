@@ -1,14 +1,12 @@
 .container {
-  --toggle-height: 28px;
-  --toggle-width: 60px;
-  --thumb-size: 20px;
   display: flex;
   padding-left: 1rem;
 }
 /* The switch - the box around the slider */
 .switch {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   width: var(--toggle-width);
   height: var(--toggle-height);
   flex: 1 0 var(--toggle-height);
@@ -21,60 +19,6 @@
   height: 0;
 }
 
-/* The slider */
-.slider {
-  position: absolute;
+.icon {
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--neutralSecondary);
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: var(--thumb-size);
-  width: var(--thumb-size);
-  left: 4px;
-  bottom: 4px;
-  background-color: var(--white);
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-input:checked + .slider {
-  background-color: var(--neutralTernary);
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px var(--themePrimary);
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(
-    calc(var(--toggle-width) - 8px - var(--thumb-size))
-  );
-  -ms-transform: translateX(
-    calc(var(--toggle-width) - 8px - var(--thumb-size))
-  );
-  transform: translateX(calc(var(--toggle-width) - 8px - var(--thumb-size)));
-}
-
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-.label {
-  display: inline-block;
-  margin: auto 0.5rem;
-  vertical-align: middle;
-  font-size: 1rem;
 }

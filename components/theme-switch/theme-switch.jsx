@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
+import { DarkModeIcon, LightModeIcon } from 'components/icon';
 
 const KEY = "prefers-color-scheme";
 const LIGHT = "light";
@@ -24,16 +25,18 @@ export const ThemeSwitch = () => {
     document.body.dataset.theme = theme;
   }, [theme]);
 
+  const isDarkTheme = theme === DARK;
+  const ThemeIcon = isDarkTheme ? LightModeIcon : DarkModeIcon;
+
   return (
     <div className={styles.container}>
-      <span className={styles.label}>Theme</span>
       <label className={styles.switch}>
         <input
           type="checkbox"
           onClick={onThemeChange}
-          checked={theme === DARK}
+          checked={isDarkTheme}
         />
-        <span className={clsx(styles.slider, styles.round)}></span>
+        <ThemeIcon className={styles.icon} />
       </label>
     </div>
   );
