@@ -5,4 +5,7 @@ export {
   IoPersonCircleOutline as ContactIcon,
   IoSunnyOutline as LightModeIcon,
   IoMoonOutline as DarkModeIcon,
+  IoSchoolOutline as SchoolIcon,
+  IoSettingsOutline as SettingIcon,
+  IoReaderOutline as ReaderIcon
 } from "react-icons/io5";

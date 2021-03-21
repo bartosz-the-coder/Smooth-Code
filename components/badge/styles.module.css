@@ -1,11 +1,12 @@
 .badge {
-  width: 125px;
-  margin: 1vmin;
-  padding: 0.25rem 0.5rem;
+  width: clamp(110px, 18vmin, 140px);
+  margin: 1vmin 0;
+  padding: 0.25rem 0.25rem;
   border-radius: 10px;
+  box-sizing: content-box;
   color: var(--text);
   background-color: var(--neutralSecondary);
-  font-size: clamp(0.8rem, 0.5vmin, 1rem);
+  font-size: clamp(0.8rem, 70%, 1rem);
   text-align: center;
   text-transform: uppercase;
 }

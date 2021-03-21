@@ -1,0 +1,33 @@
+/* EDUCATION */
+li.education_item.education_item {
+  display: block;
+  flex: 1 1 calc(50% - 1rem);
+  height: auto;
+  padding-top: 1vmin;
+  padding-bottom: 1vmin;
+}
+
+li.education_item > h3{
+  margin-top: 0;
+  margin-bottom: 1vmin;
+  font-size: 80%;
+  font-weight: 400;
+}
+
+li.education_item > h3 > span{
+  margin-left: 1vmin;
+  vertical-align: bottom;
+}
+
+div.title_wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 600px) {
+  li.education_item.education_item {
+    flex-basis: 100%;
+  }
+}

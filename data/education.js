@@ -16,5 +16,5 @@ export const education = [
     degree: "Bachelor of Science",
     field: "Computer Science",
     specialisation: "Software engineering",
-  },
+  }
 ];
