@@ -1,0 +1,11 @@
+.badge {
+  width: 125px;
+  margin: 1vmin;
+  padding: 0.25rem 0.5rem;
+  border-radius: 10px;
+  color: var(--text);
+  background-color: var(--neutralSecondary);
+  font-size: clamp(0.8rem, 0.5vmin, 1rem);
+  text-align: center;
+  text-transform: uppercase;
+}

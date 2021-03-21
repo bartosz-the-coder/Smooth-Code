@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import clsx from "clsx";
 import styles from "./styles.module.css";
-import { DarkModeIcon, LightModeIcon } from 'components/icon';
+import { DarkModeIcon, LightModeIcon } from "components/icon";
 
 const KEY = "prefers-color-scheme";
 const LIGHT = "light";
@@ -11,7 +10,7 @@ const detectPreferedTheme = () =>
   (window.matchMedia(`(${KEY}: ${LIGHT})`).matches ? LIGHT : DARK);
 
 export const ThemeSwitch = () => {
-  const [theme, setTheme] = useState("");
+  const [theme, setTheme] = useState(LIGHT);
   const onThemeChange = () =>
     setTheme((t) => {
       const value = t === LIGHT ? DARK : LIGHT;
@@ -31,11 +30,7 @@ export const ThemeSwitch = () => {
   return (
     <div className={styles.container}>
       <label className={styles.switch}>
-        <input
-          type="checkbox"
-          onClick={onThemeChange}
-          checked={isDarkTheme}
-        />
+        <input type="checkbox" onChange={onThemeChange} checked={isDarkTheme} />
         <ThemeIcon className={styles.icon} />
       </label>
     </div>

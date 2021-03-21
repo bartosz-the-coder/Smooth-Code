@@ -37,17 +37,6 @@ ul.list > li {
   font-size: clamp(1rem, 1.2vmax, 2rem);
 }
 
-.badge {
-  width: 125px;
-  color: var(--text);
-  text-align: center;
-  font-size: clamp(0.8rem, 0.5vmin, 1rem);
-  background-color: var(--neutralSecondary);
-  margin: 1vmin;
-  padding: 0.25rem 0.5rem;
-  border-radius: 10px;
-}
-
 @media only screen and (max-width: 600px) {
   .container > section {
     display: flex;
