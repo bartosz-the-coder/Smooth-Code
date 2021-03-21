@@ -1,5 +1,5 @@
 import { Children } from "react";
-import { FullStarIcon as FullStarIcon, EmptyStarIcon, HalfStarIcon } from "components/icon";
+import { FullStarIcon, EmptyStarIcon, HalfStarIcon } from "components/icon";
 import styles from "./styles.module.css";
 
 export const SkillRow = ({ name, level }) => {
@@ -17,15 +17,16 @@ const createLevelStars = (level) => {
   const hasHalfStar = fullStars !== fiveGradeLevel;
   return Children.toArray(
     new Array(5).fill(null).map((_, index) => {
+      let StarIcon;
       if (index < fullStars) {
-        return <FullStarIcon className={styles.star} />;
+        StarIcon = FullStarIcon;
+      } else if (hasHalfStar && index === fullStars) {
+        StarIcon = HalfStarIcon;
+      } else {
+        StarIcon = EmptyStarIcon;
       }
 
-      if (hasHalfStar && index === fullStars) {
-        return <HalfStarIcon className={styles.star} />;
-      }
-
-      return <EmptyStarIcon className={styles.star}/>;
+      return <StarIcon className={styles.star} />;
     })
   );
 };
