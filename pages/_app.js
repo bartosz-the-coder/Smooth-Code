@@ -34,6 +34,10 @@ const HyHead = () => (
   </Head>
 );
 
-const iconStyle = { style: { verticalAlign: "middle", fontSize: 24 } };
+const iconStyle = {
+  style: {
+    verticalAlign: "middle",
+  }
+};
 
 export default MyApp;

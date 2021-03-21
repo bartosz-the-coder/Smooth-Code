@@ -74,6 +74,7 @@ li.link > a {
 li.link > a > svg {
   margin: 0 10px;
   flex-shrink: 0;
+  font-size: 24px;
 }
 
 div.logo {

@@ -44,7 +44,7 @@ export const skills = [
     level: 0.5
   },
   {
-    name: 'Design and architectural patterns',
+    name: 'Patterns',
     level: 0.90
   },
 ];

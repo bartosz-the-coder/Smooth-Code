@@ -1,0 +1,46 @@
+li.skill_item.skill_item {
+  flex: 1 1 calc(33% - 1rem);
+  white-space: nowrap;
+}
+
+li.skill_item > div.stars {
+  display: flex;
+  color: var(--themePrimary);
+}
+
+svg.star {
+  font-size: 100%;
+}
+
+.star + .star {
+  margin-left: 5px
+}
+
+svg.star path {
+  stroke: var(--neutralTernary);
+  stroke-width: 32;
+}
+
+@media only screen and (max-width: 800px) {
+  li.skill_item.skill_item {
+    flex-basis: 100%;
+    padding-top: 5vmin;
+    padding-bottom: 5vmin;
+  }
+
+  svg.star {
+    font-size: 80%
+  }
+
+  .star + .star {
+    margin-left: 1px;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  li.skill_item.skill_item {
+    flex-basis: calc(50% - 1rem);
+    padding-top: 3vmin;
+    padding-bottom: 3vmin;
+  }
+}

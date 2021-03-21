@@ -1,6 +1,6 @@
 .badge {
   width: clamp(110px, 18vmin, 140px);
-  margin: 1vmin 0;
+  margin: 2vmin 0;
   padding: 0.25rem 0.25rem;
   border-radius: 10px;
   box-sizing: content-box;

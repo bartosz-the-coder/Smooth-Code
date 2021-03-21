@@ -7,5 +7,8 @@ export {
   IoMoonOutline as DarkModeIcon,
   IoSchoolOutline as SchoolIcon,
   IoSettingsOutline as SettingIcon,
-  IoReaderOutline as ReaderIcon
+  IoReaderOutline as ReaderIcon,
+  IoStarHalfOutline as HalfStarIcon,
+  IoStarSharp as FullStarIcon,
+  IoStarOutline as EmptyStarIcon,
 } from "react-icons/io5";

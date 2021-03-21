@@ -25,7 +25,7 @@ ul.list > li {
   height: clamp(2rem, 3vmax, 2.5rem);
   min-width: 5vmin;
   margin: 0.25rem 0.5rem;
-  padding: 0 1vmax;
+  padding: 0vmin 2vmin;
   background-color: var(--neutralPrimary);
   border-radius: 5px;
   border: 1px solid var(--neutralSecondary);
@@ -34,7 +34,7 @@ ul.list > li {
   font-size: clamp(1rem, 1.2vmax, 2rem);
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .about {
     display: flex;
     flex-direction: column;

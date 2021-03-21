@@ -7,16 +7,21 @@ li.education_item.education_item {
   padding-bottom: 1vmin;
 }
 
-li.education_item > h3{
+li.education_item > h3 {
   margin-top: 0;
   margin-bottom: 1vmin;
   font-size: 80%;
   font-weight: 400;
 }
 
-li.education_item > h3 > span{
+li.education_item > h3 > span {
   margin-left: 1vmin;
   vertical-align: middle;
+  white-space: nowrap;
+}
+
+li.education_item > h3 > svg {
+  font-size: 180%;
 }
 
 div.title_wrapper {
@@ -24,10 +29,24 @@ div.title_wrapper {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  margin: 1vmin 0 2vmin;
 }
 
-@media only screen and (max-width: 600px) {
+div.title_wrapper > :last-child {
+  margin: 0;
+}
+
+@media only screen and (max-width: 800px) {
   li.education_item.education_item {
     flex-basis: 100%;
+    padding-top: 2vmin;
+    padding-bottom: 2vmin;
+  }
+
+  div.title_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 2vmin;
   }
 }
