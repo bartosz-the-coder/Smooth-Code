@@ -16,7 +16,7 @@ li.education_item > h3{
 
 li.education_item > h3 > span{
   margin-left: 1vmin;
-  vertical-align: bottom;
+  vertical-align: middle;
 }
 
 div.title_wrapper {
