@@ -1,7 +1,8 @@
 .badge {
-  width: clamp(110px, 18vmin, 140px);
-  margin: 2vmin 0;
-  padding: 0.25rem 0.25rem;
+  min-width: 110px;
+  max-width: 140px;
+  margin: 0.5em 0;
+  padding: 0.25em 1em;
   border-radius: 10px;
   box-sizing: content-box;
   color: var(--text);
@@ -9,5 +10,6 @@
   font-size: clamp(0.8rem, 70%, 1rem);
   text-align: center;
   text-transform: uppercase;
+  white-space: nowrap;
   user-select: none;
 }

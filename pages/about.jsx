@@ -9,10 +9,10 @@ export default function About({ skills, experience, education }) {
       <AboutSection title="My experience">
         {Children.toArray(experience.map(ExperienceRow))}
       </AboutSection>
-      <AboutSection title="My education" inline>
+      <AboutSection title="My education">
         {Children.toArray(education.map(EducationRow))}
       </AboutSection>
-      <AboutSection title="My skills" inline>
+      <AboutSection title="My skills">
         {Children.toArray(skills.map(SkillRow))}
       </AboutSection>
     </div>

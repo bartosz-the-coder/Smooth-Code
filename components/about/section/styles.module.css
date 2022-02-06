@@ -9,29 +9,26 @@
 }
 
 .list {
-  flex: 8 1;
-  padding: 0;
-}
-
-.inline_list {
   display: flex;
   flex-wrap: wrap;
+  flex: 8 1;
+  padding: 0;
 }
 
 ul.list > li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: clamp(2rem, 3vmax, 2.5rem);
+  height: fit-content;
   min-width: 5vmin;
   margin: 0.25rem 0.5rem;
-  padding: 0vmin 2vmin;
+  padding: 0.25em 1em;
   background-color: var(--neutralPrimary);
   border-radius: 5px;
   border: 1px solid var(--neutralSecondary);
   color: var(--text);
   list-style-type: none;
-  font-size: clamp(1rem, 1.2vmax, 2rem);
+  font-size: clamp(1rem, 1.2vmax, 1.2rem);
 }
 
 @media only screen and (max-width: 800px) {
