@@ -16,10 +16,10 @@ a {
 }
 
 :root {
-  --color-transition: background-color 0.5s ease-out, color 0.5s ease-out
+  --theme-animation: background-color 0.5s ease-out, color 0.5s ease-out
 }
 
 * {
   box-sizing: border-box;
-  transition: var(--color-transition);
+  transition: var(--theme-animation);
 }
