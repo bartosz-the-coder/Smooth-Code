@@ -1,5 +1,12 @@
+li.skill_item {
+  --skill-item-per-row: 6;
+}
+
 li.skill_item.skill_item {
-  flex: 1 1 calc(33% - 1rem);
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: calc(1 / var(--skill-item-per-row) * 100% - 1rem);
+  min-width: 180px;
   white-space: nowrap;
 }
 
@@ -13,7 +20,7 @@ svg.star {
 }
 
 .star + .star {
-  margin-left: 5px
+  margin-left: 0.1em;
 }
 
 svg.star path {
@@ -21,26 +28,23 @@ svg.star path {
   stroke-width: 32;
 }
 
-@media only screen and (max-width: 800px) {
-  li.skill_item.skill_item {
-    flex-basis: 100%;
-    padding-top: 5vmin;
-    padding-bottom: 5vmin;
+@media only screen and (max-width: 768px) {
+  li.skill_item {
+    --skill-item-per-row: 2;
   }
-
   svg.star {
     font-size: 80%
   }
+}
 
-  .star + .star {
-    margin-left: 1px;
+@media only screen and (max-width: 1366px) {
+  li.skill_item {
+    --skill-item-per-row: 3;
   }
 }
 
-@media only screen and (max-width: 1100px) {
-  li.skill_item.skill_item {
-    flex-basis: calc(50% - 1rem);
-    padding-top: 3vmin;
-    padding-bottom: 3vmin;
+@media only screen and (max-width: 1920px) {
+  li.skill_item {
+    --skill-item-per-row: 4;
   }
 }

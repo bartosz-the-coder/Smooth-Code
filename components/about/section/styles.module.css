@@ -22,7 +22,7 @@ ul.list > li {
   height: fit-content;
   min-width: 5vmin;
   margin: 0.25rem 0.5rem;
-  padding: 0.25em 1em;
+  padding: 0.5em 1em;
   background-color: var(--neutralPrimary);
   border-radius: 5px;
   border: 1px solid var(--neutralSecondary);
