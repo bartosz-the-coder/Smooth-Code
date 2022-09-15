@@ -23,3 +23,15 @@ a {
   box-sizing: border-box;
   transition: var(--theme-animation);
 }
+
+button {
+  width: 15ch;
+  margin-inline: auto;
+  padding: 0.5em;
+  appearance: none;
+  border-style: ridge;
+  border-color: var(--neutralTernary);
+  border-radius: 5px;
+  background-color: var(--neutralPrimary);
+  color: var(--text)
+}

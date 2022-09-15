@@ -10,6 +10,7 @@ body[data-theme='light'] {
   --neutralTernary: var(--grey3);
 
   --main-background: var(--grey6);
+  --modal-background: var(--grey1);
   --text: var(--black);
   --textInv: var(--white);
 }
@@ -21,6 +22,7 @@ body[data-theme='dark'] {
   --neutralTernary: var(--grey3);
 
   --main-background: var(--grey2);
+  --modal-background: var(--grey6);
   --text: var(--white);
   --textInv: var(--black);
 }
