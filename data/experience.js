@@ -8,17 +8,17 @@ export const experience = [
     startDate: getFormattedDate(new Date(2021, 9, 1)),
     endDate: getFormattedDate(),
     technology: "React",
-    projectDescription: "Development of ",
+    projectDescription: "Development of cryptocurrency trading apps in React",
   },
   {
     title: "Senior Frontend Engineer",
     type: 'Contractor',
     employer: "GRID esports",
     startDate: getFormattedDate(new Date(2021, 7, 1)),
-    endDate: getFormattedDate(),
+    endDate: getFormattedDate(new Date(2022, 4, 30)),
     technology: "React",
     projectDescription:
-      "Development an esport data hub in React web application ",
+      "Development an esport data hub in React ",
   },
   {
     title: "Software Engineer",
