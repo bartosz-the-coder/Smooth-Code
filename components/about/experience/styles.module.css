@@ -1,6 +1,7 @@
 .experience_item {
   --width-modifier: 1;
   width: calc(1 / var(--width-modifier) * 100% - 1em);
+  line-height: 1.25;
 }
 
 .job_details {
@@ -11,20 +12,14 @@
   font-weight: bold;
 }
 
-.job_contractor::after {
-  content: '(Contractor)';
-  margin-inline: 0.25em;
-  font-size: 0.75em;
-  color: var(--neutralTernary);
-}
-
 .job_employer::before {
   content: '@';
   margin-inline: 0.25em;
 }
 
-.job_contractor + .job_employer::before {
-  margin-inline-start: 0;
+.job_contractor {
+  font-size: 0.85em;
+  color: var(--neutralTernary);
 }
 
 @media only screen and ((max-width: 900px) or (min-width: 1366px)) {

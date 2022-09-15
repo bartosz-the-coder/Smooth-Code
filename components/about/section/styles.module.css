@@ -20,7 +20,7 @@ ul.list > li {
   align-items: center;
   justify-content: space-between;
   height: fit-content;
-  min-width: 5vmin;
+  min-width: 320px;
   margin: 0.25rem 0.5rem;
   padding: 0.5em 1em;
   background-color: var(--neutralPrimary);

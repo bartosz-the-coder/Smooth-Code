@@ -31,18 +31,28 @@ export const experience = [
       "Development of React web application for content management.",
   },
   {
-    title: "Web developer / Technical Leader",
-    type: 'FTE',
+    title: "Technical Leader",
+    type: 'Full time employment',
+    employer: "EY GDS (CS) Poland",
+    startDate: getFormattedDate(new Date(2019, 9, 1)),
+    endDate: getFormattedDate(new Date(2021, 2, 30)),
+    technology: "React",
+    projectDescription:
+      "Leading a development team working on various React web applications for tax return and settlement.",
+  },
+  {
+    title: "Senior Web Developer",
+    type: 'Full time employment',
     employer: "EY GDS (CS) Poland",
     startDate: getFormattedDate(new Date(2017, 5, 1)),
-    endDate: getFormattedDate(new Date(2021, 2, 30)),
+    endDate: getFormattedDate(new Date(2029, 8, 30)),
     technology: "React",
     projectDescription:
       "Development of multiple React web applications for tax return and settlement.",
   },
   {
     title: ".NET Software Engineer",
-    type: 'FTE',
+    type: 'Full time employment',
     employer: "Credit Suisse Poland",
     startDate: getFormattedDate(new Date(2013, 8, 1)),
     endDate: getFormattedDate(new Date(2017, 4, 30)),
@@ -52,7 +62,7 @@ export const experience = [
   },
   {
     title: "Android Developer",
-    type: 'FTE',
+    type: 'Full time employment',
     employer: "Aduma Mobile",
     startDate: getFormattedDate(new Date(2013, 5, 1)),
     endDate: getFormattedDate(new Date(2013, 7, 30)),
