@@ -12,6 +12,10 @@
   flex: 1 0 var(--toggle-height);
 }
 
+.switch:hover { 
+  color: var(--themeSecondary)
+}
+
 /* Hide default HTML checkbox */
 .switch input {
   opacity: 0;
