@@ -13,6 +13,7 @@
   flex-wrap: wrap;
   flex: 8 1;
   padding: 0;
+  gap: 0.5em;
 }
 
 ul.list > li {
@@ -21,7 +22,6 @@ ul.list > li {
   justify-content: space-between;
   height: fit-content;
   min-width: 320px;
-  margin: 0.25rem 0.5rem;
   padding: 0.5em 1em;
   background-color: var(--neutralPrimary);
   border-radius: 5px;
