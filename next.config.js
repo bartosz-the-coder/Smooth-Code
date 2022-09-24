@@ -1,16 +1,20 @@
-const { PHASE_DEVELOPMENT_SERVER } = require("next/constants");
+const { PHASE_DEVELOPMENT_SERVER } = require('next/constants');
 
-module.exports = (phase, { defaultConfig }) => {
-  const config = Object.assign({}, defaultConfig, {
-    trailingSlash: true
-  });
-
+/**
+ * 
+ * @param {string} phase 
+ * @param {import('next').NextConfig} nextConfig 
+ * @returns {import('next').NextConfig}
+ */
+module.exports = (phase) => {
   if (phase === PHASE_DEVELOPMENT_SERVER) {
-    return config;
+    return {
+      trailingSlash: true
+    };
   }
 
   return {
-    ...config,
+    trailingSlash: true,
     images: {
       loader: "cloudinary",
       path: "/",
