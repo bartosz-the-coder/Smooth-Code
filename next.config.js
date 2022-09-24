@@ -3,18 +3,23 @@ const { PHASE_DEVELOPMENT_SERVER } = require('next/constants');
 /**
  * 
  * @param {string} phase 
- * @param {import('next').NextConfig} nextConfig 
  * @returns {import('next').NextConfig}
  */
 module.exports = (phase) => {
+
+  /**
+   * @type {import('next').NextConfig}
+   */
+  const config =  {
+    trailingSlash: true,
+  };
+
   if (phase === PHASE_DEVELOPMENT_SERVER) {
-    return {
-      trailingSlash: true
-    };
+    return config;
   }
 
   return {
-    trailingSlash: true,
+    ...config,
     images: {
       loader: "cloudinary",
       path: "/",
