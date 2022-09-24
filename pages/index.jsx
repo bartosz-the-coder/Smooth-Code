@@ -7,8 +7,8 @@ export default function Home(props) {
     <div className={styles.container}>
       <h2>Bartosz Nowak</h2>
       <div>
-        <p>Software developer by day,</p>
-        <p>Software developer by night.</p>
+        <p>Software engineer by day,</p>
+        <p>Software engineer by night.</p>
       </div>
       <div className={styles.logo}>
         <Image
