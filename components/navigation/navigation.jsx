@@ -2,34 +2,28 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import clsx from 'clsx';
-import { HomeIcon, ContactIcon, AboutIcon } from 'components/icon';
 import { ImageLoader } from 'components/image';
 import styles from './styles.module.css';
+import { navLinkConfig } from './links';
 
 export const Navigation = () => (
   <nav className={styles.navigation}>
     <div className={styles.logo}>
       <Image
-        src='/assets/logo.png'
-        alt='Smooth Code logo'
-        layout='fill'
-        objectFit='contain'
+        src="/assets/logo.png"
+        alt="Smooth Code logo"
+        layout="fill"
+        objectFit="contain"
         loader={ImageLoader}
       />
     </div>
     <ul className={styles.list}>
-      <NavLink href='/'>
-        <HomeIcon />
-        Home
-      </NavLink>
-      <NavLink href='/about'>
-        <AboutIcon />
-        About
-      </NavLink>
-      <NavLink href='/contact'>
-        <ContactIcon />
-        Contact
-      </NavLink>
+      {Object.entries(navLinkConfig).map(([route, { Icon, name }]) => (
+        <NavLink key={name} href={route}>
+          <Icon />
+          {name}
+        </NavLink>
+      ))}
     </ul>
   </nav>
 );

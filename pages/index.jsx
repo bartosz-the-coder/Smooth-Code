@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { ImageLoader } from 'components/image';
 import styles from "styles/Home.module.css";
 
-export default function Home(props) {
+export default function Home() {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Bartosz Nowak</h2>

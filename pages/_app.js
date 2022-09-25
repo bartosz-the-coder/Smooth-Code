@@ -1,23 +1,22 @@
 import Head from 'next/head';
-
 import { IconContext } from 'components/icon';
 import { Header } from 'components/header';
-import { Navigation } from 'components/navigation';
+import { Navigation, useNavigationSwipe } from 'components/navigation';
 import { ThemeSwitch } from 'components/theme-switch';
-import { useNavigationSwipe } from 'hooks/useNavigationSwipe';
 import styles from 'styles/App.module.css';
 import 'styles/globals.css';
 
-function MyApp({ Component, pageProps }) {
-  const { ref } = useNavigationSwipe()
+function SmoothApp({ Component, pageProps }) {
+  const { ref: swipeRef } = useNavigationSwipe()
+
   return (
     <IconContext.Provider value={iconStyle}>
-      <div ref={ref} className={styles.container}>
-        <HyHead />
+      <div ref={swipeRef} className={styles.container}>
+        <SmoothHead />
         <Header>
           <ThemeSwitch />
         </Header>
-        <Navigation />
+        <Navigation swipeableContainer={swipeRef.current} />
         <main>
           <Component {...pageProps} />
         </main>
@@ -26,7 +25,7 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-const HyHead = () => (
+const SmoothHead = () => (
   <Head>
     <title>Smooth Code</title>
     <link rel="icon" href="/favicon.ico" />
@@ -47,4 +46,4 @@ const iconStyle = {
   }
 };
 
-export default MyApp;
+export default SmoothApp;
