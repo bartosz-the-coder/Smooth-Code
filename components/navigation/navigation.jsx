@@ -1,32 +1,32 @@
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import clsx from "clsx";
-import { HomeIcon, ContactIcon, AboutIcon } from "components/icon";
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import clsx from 'clsx';
+import { HomeIcon, ContactIcon, AboutIcon } from 'components/icon';
 import { ImageLoader } from 'components/image';
-import styles from "./styles.module.css";
+import styles from './styles.module.css';
 
 export const Navigation = () => (
   <nav className={styles.navigation}>
     <div className={styles.logo}>
       <Image
-        src="/assets/logo.png"
-        alt="Smooth Code logo"
-        layout="fill"
-        objectFit="contain"
+        src='/assets/logo.png'
+        alt='Smooth Code logo'
+        layout='fill'
+        objectFit='contain'
         loader={ImageLoader}
       />
     </div>
     <ul className={styles.list}>
-      <NavLink href="/">
+      <NavLink href='/'>
         <HomeIcon />
         Home
       </NavLink>
-      <NavLink href="/about">
+      <NavLink href='/about'>
         <AboutIcon />
         About
       </NavLink>
-      <NavLink href="/contact">
+      <NavLink href='/contact'>
         <ContactIcon />
         Contact
       </NavLink>

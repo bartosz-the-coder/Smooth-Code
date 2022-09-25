@@ -1,15 +1,18 @@
-import Head from "next/head";
-import { IconContext } from "components/icon";
-import { Header } from "components/header";
-import { Navigation } from "components/navigation";
-import { ThemeSwitch } from "components/theme-switch";
-import styles from "styles/App.module.css";
-import "styles/globals.css";
+import Head from 'next/head';
+
+import { IconContext } from 'components/icon';
+import { Header } from 'components/header';
+import { Navigation } from 'components/navigation';
+import { ThemeSwitch } from 'components/theme-switch';
+import { useNavigationSwipe } from 'hooks/useNavigationSwipe';
+import styles from 'styles/App.module.css';
+import 'styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
+  const { ref } = useNavigationSwipe()
   return (
     <IconContext.Provider value={iconStyle}>
-      <div className={styles.container}>
+      <div ref={ref} className={styles.container}>
         <HyHead />
         <Header>
           <ThemeSwitch />
