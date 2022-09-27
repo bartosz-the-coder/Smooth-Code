@@ -12,16 +12,20 @@
   display: flex;
   flex-wrap: wrap;
   flex: 8 1;
-  padding: 0;
   gap: 0.5em;
 }
 
-ul.list > li {
+.grid {
+  --grid-item-basis: 120px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--grid-item-basis), 1fr));
+  flex: 8 1;
+  gap: 0.5em;
+}
+
+ul:is(.list, .grid) > li {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  height: fit-content;
-  min-width: 320px;
   padding: 0.5em 1em;
   background-color: var(--neutralPrimary);
   border-radius: 5px;
@@ -29,6 +33,19 @@ ul.list > li {
   color: var(--text);
   list-style-type: none;
   font-size: clamp(1rem, 1.2vmax, 1.2rem);
+}
+
+ul.list > li {
+  justify-content: space-between;
+  height: fit-content;
+  min-width: 320px;
+}
+
+ul.grid > li {
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5em;
+  aspect-ratio: 1;
 }
 
 @media only screen and (max-width: 800px) {
@@ -41,7 +58,13 @@ ul.list > li {
     flex: 1;
   }
 
-  ul.list {
+  ul:is(.list, .grid) {
     margin: 0;
+  }
+}
+
+@media only screen and (min-width: 1366px) {
+  .grid {
+    --grid-item-basis: 150px
   }
 }

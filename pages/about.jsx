@@ -6,13 +6,13 @@ export default function About({ skills, experience, education }) {
   return (
     <div className={styles.container}>
       <h2>My Expertises</h2>
-      <AboutSection title="My experience">
+      <AboutSection title="My experience" type="list">
         {Children.toArray(experience.map(ExperienceRow))}
       </AboutSection>
-      <AboutSection title="My education">
+      <AboutSection title="My education" type="list">
         {Children.toArray(education.map(EducationRow))}
       </AboutSection>
-      <AboutSection title="My skills">
+      <AboutSection title="My skills" type="grid">
         {Children.toArray(skills.map(SkillRow))}
       </AboutSection>
     </div>
