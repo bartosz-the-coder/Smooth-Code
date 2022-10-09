@@ -1,5 +1,5 @@
-import { useState, useRef } from "react";
-import styles from "styles/Contact.module.css";
+import { useState, useRef } from 'react';
+import styles from 'styles/Contact.module.css';
 
 export default function Contact() {
   const formRef = useRef();
@@ -8,7 +8,19 @@ export default function Contact() {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    setName(event.target.name.value);
+    fetch(
+      '/api/contact',
+      {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(
+        ['name', 'email', 'message'].reduce((acc, key) => {
+          acc[key] = event.target[key].value;
+          return acc;
+        }, {}))
+    })
   };
   const onReset = () => setName(null);
   const onDismiss = () => formRef.current.reset();
@@ -57,7 +69,7 @@ export default function Contact() {
             onReset={onReset}
           >
             <input id="name" type="text" placeholder="Your name" required />
-            <input type="email" placeholder="Your email" required />
+            <input id="email" type="email" placeholder="Your email" required />
             <textarea
               id="message"
               placeholder="Your message"
