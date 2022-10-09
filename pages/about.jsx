@@ -1,6 +1,6 @@
-import { Children } from "react";
-import styles from "styles/About.module.css";
-import { AboutSection, EducationRow, ExperienceRow, SkillRow } from "components/about";
+import { Children } from 'react';
+import { AboutSection, EducationRow, ExperienceRow, SkillRow } from 'components/about';
+import styles from 'styles/About.module.css';
 
 export default function About({ skills, experience, education }) {
   return (

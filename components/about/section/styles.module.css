@@ -8,19 +8,21 @@
   white-space: nowrap;
 }
 
+.about :is(.list, .grid) {
+  flex: 8 1;
+  padding: 0;
+  gap: 0.5em;
+}
+
 .list {
   display: flex;
-  flex-wrap: wrap;
-  flex: 8 1;
-  gap: 0.5em;
+  flex-wrap: wrap;  
 }
 
 .grid {
   --grid-item-basis: 120px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--grid-item-basis), 1fr));
-  flex: 8 1;
-  gap: 0.5em;
 }
 
 ul:is(.list, .grid) > li {
@@ -36,9 +38,10 @@ ul:is(.list, .grid) > li {
 }
 
 ul.list > li {
+  min-width: 300px;
+  flex-grow: 1;
   justify-content: space-between;
   height: fit-content;
-  min-width: 320px;
 }
 
 ul.grid > li {
