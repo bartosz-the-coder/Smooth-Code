@@ -1,22 +1,20 @@
 import Head from 'next/head';
 import { IconContext } from 'components/icon';
 import { Header } from 'components/header';
-import { Navigation, useNavigationSwipe } from 'components/navigation';
+import { Navigation } from 'components/navigation';
 import { ThemeSwitch } from 'components/theme-switch';
 import styles from 'styles/App.module.css';
 import 'styles/globals.css';
 
 function SmoothApp({ Component, pageProps }) {
-  const { ref: swipeRef } = useNavigationSwipe()
-
   return (
     <IconContext.Provider value={iconStyle}>
-      <div ref={swipeRef} className={styles.container}>
+      <div className={styles.container}>
         <SmoothHead />
         <Header>
           <ThemeSwitch />
         </Header>
-        <Navigation swipeableContainer={swipeRef.current} />
+        <Navigation />
         <main>
           <Component {...pageProps} />
         </main>
