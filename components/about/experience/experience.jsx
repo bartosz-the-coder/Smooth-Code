@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import { PeriodBadge } from "components/badge";
 import styles from "./styles.module.css";
 

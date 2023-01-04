@@ -4,7 +4,7 @@ export const experience = [
   {
     title: "Senior Frontend Developer",
     type: 'Contractor',
-    employer: "Galaxy Digital Services",
+    employer: "Galaxy Digital",
     startDate: getFormattedDate(new Date(2021, 9, 1)),
     endDate: getFormattedDate(),
     technology: "React",
