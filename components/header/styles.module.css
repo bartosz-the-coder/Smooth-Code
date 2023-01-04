@@ -12,9 +12,9 @@ header.app_header {
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
-}
 
-header.app_header > p {
-  width: 100%;
-  white-space: nowrap;
+  & > p {
+    width: 100%;
+    white-space: nowrap;
+  }
 }

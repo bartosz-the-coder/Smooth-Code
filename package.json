@@ -16,5 +16,9 @@
     "react-icons": "^4.4.0",
     "react-responsive": "^9.0.0",
     "react-swipeable": "^7.0.0"
+  },
+  "devDependencies": {
+    "postcss-nesting": "^10.2.0",
+    "postcss-preset-env": "^7.8.3"
   }
 }
