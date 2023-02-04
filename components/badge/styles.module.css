@@ -7,9 +7,16 @@
   box-sizing: content-box;
   color: var(--text);
   background-color: var(--neutralSecondary);
-  font-size: clamp(0.8rem, 70%, 1rem);
+  font-size: clamp(0.7rem, 70%, 1rem);
   text-align: center;
   text-transform: uppercase;
   white-space: nowrap;
   user-select: none;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .badge {
+    padding-inline: 0.25em;
+  }
 }
