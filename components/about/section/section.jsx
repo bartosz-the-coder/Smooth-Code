@@ -1,8 +1,9 @@
+import clsx from 'clsx'
 import styles from './styles.module.css';
 
-export const AboutSection = ({ title, children, type }) => (
+export const AboutSection = ({ title, children, shape }) => (
   <section className={styles.about}>
     <h3>{title}</h3>
-    <ul className={styles[type] }>{children}</ul>
+    <ul className={clsx(styles.layout, styles[shape])}>{children}</ul>
   </section>
 );

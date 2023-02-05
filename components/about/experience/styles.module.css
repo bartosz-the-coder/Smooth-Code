@@ -1,7 +1,6 @@
 .experience_item {
-  --width-modifier: 1;
   position: relative;
-  width: calc(1 / var(--width-modifier) * 100% - 1em);
+  width: 100%;
   line-height: 1.25;
 }
 
@@ -31,23 +30,5 @@
 
   .job_employer::before {
     content: none;
-  }
-}
-
-@media (width >= 1366px) {
-  .experience_item {
-    --width-modifier: 2;
-  }
-}
-
-@media (width >= 1920px  ) {
-  .experience_item {
-    --width-modifier: 3;
-  }
-}
-
-@media (width >= 2560px  ) {
-  .experience_item {
-    --width-modifier: 4;
   }
 }
