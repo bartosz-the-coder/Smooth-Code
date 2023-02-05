@@ -951,7 +951,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-icons@npm:^4.4.0":
+"react-icons@npm:^4.7.1":
   version: 4.7.1
   resolution: "react-icons@npm:4.7.1"
   peerDependencies:
@@ -1025,7 +1025,7 @@ __metadata:
     postcss-preset-env: ^7.8.3
     react: ^18.2.0
     react-dom: ^18.2.0
-    react-icons: ^4.4.0
+    react-icons: ^4.7.1
     react-responsive: ^9.0.0
     react-swipeable: ^7.0.0
   languageName: unknown
