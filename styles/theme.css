@@ -16,6 +16,7 @@ body[data-theme='light'] {
   --input-background: var(--white);
 
   --text: var(--black);
+  --textSecondary: var(--grey1);
   --textInv: var(--white);
 }
 
@@ -32,5 +33,6 @@ body[data-theme='dark'] {
   --input-background: var(--grey4);
 
   --text: var(--white);
+  --textSecondary: var(--grey5);
   --textInv: var(--black);
 }

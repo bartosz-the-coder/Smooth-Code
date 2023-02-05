@@ -1,4 +1,5 @@
 import { PeriodBadge } from "components/badge";
+import { JobDescription } from './components/JobDescription';
 import styles from "./styles.module.css";
 
 export const ExperienceRow = ({
@@ -7,7 +8,7 @@ export const ExperienceRow = ({
   type,
   startDate,
   endDate,
-  projectDescription,
+  project,
 }) => (
   <li className={styles.experience_item}>
     <div className={styles.job_details}>
@@ -16,20 +17,7 @@ export const ExperienceRow = ({
         <span className={styles.job_employer}>{employer}</span>
       </div>
       <div className={styles.job_contractor}>{type}</div>
-      <details className={styles.job_description}>
-        <summary>Job details</summary>
-        <article>
-          <p> {projectDescription}</p>
-          <p>Required skills</p>
-          <ul>
-            <li>Skill 1</li>
-            <li>Skill X</li>
-            <li>Skill X</li>
-            <li>Skill X</li>
-            <li>Skill X</li>
-          </ul>
-        </article>
-      </details>
+      <JobDescription description={project.description} skills={project.technologies} />
     </div>
     <PeriodBadge start={startDate} end={endDate} />
   </li>

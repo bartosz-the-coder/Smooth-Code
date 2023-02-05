@@ -5,7 +5,7 @@ import styles from 'styles/About.module.css';
 export default function About({ skills, experience, education }) {
   return (
     <div className={styles.container}>
-      <h2>My Expertises</h2>
+      <h2>My Expertises</h2>      
       <AboutSection title="My experience" type="list">
         {Children.toArray(experience.map(ExperienceRow))}
       </AboutSection>
