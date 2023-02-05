@@ -1,6 +1,7 @@
 .tech_stack {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.5em;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -15,9 +16,4 @@
  padding-inline: 1em;
  padding-block: 0.5em;
  background-color: var(--themePrimary);
-
-  
- & + & {
-  margin-inline-start: 0.25em;
- }
 }

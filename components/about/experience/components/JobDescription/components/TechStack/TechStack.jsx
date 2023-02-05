@@ -1,17 +1,11 @@
-import {
-  JavaTechIcon,
-  CSharpTechIcon,
-  AndroidTechIcon,
-  ReactTechIcon,
-  DotnetTechIcon,
-} from "components/icon";
+import * as TechIcons from "components/icon/tech";
 
 import styles from "./styles.module.css";
 
 export const TechStack = ({ stack }) => {
   return (
     <>
-      <p>Required skills</p>
+      <h4>Tech stack</h4>
       <ul className={styles.tech_stack}>
         {stack.map((tech) => (
           <TechItem key={tech.name} tech={tech} />
@@ -32,13 +26,11 @@ const TechItem = ({ tech }) => {
 };
 
 function getIconComponent(iconName) {
-  return techIconMap[iconName] ?? "div";
+  const capitalized =
+  iconName.charAt(0).toUpperCase()
+  + iconName.slice(1);
+
+  return TechIcons[`${capitalized}TechIcon`] ?? UnknownTech;
 }
 
-const techIconMap = {
-  React: ReactTechIcon,
-  Dotnet: DotnetTechIcon,
-  CSharp: CSharpTechIcon,
-  Android: AndroidTechIcon,
-  Java: JavaTechIcon,
-};
+const UnknownTech = () => <i>🤷</i>

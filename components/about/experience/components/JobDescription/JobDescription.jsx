@@ -16,7 +16,8 @@ export const JobDescription = ({ description, skills }) => {
       >
       <summary>Job details</summary>
       <article>
-        <p> {description}</p>
+        <h4>Responsibilities</h4>
+        <p>{description}</p>
         <TechStack stack={skills} />
       </article>
     </details>

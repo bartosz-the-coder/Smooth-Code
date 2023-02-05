@@ -12,12 +12,3 @@ export {
   IoStarSharp as FullStarIcon,
   IoStarOutline as EmptyStarIcon,
 } from "react-icons/io5";
-
-export {
-  SiReact as ReactTechIcon,
-  SiDotnet as DotnetTechIcon,
-  SiJava as JavaTechIcon,
-  SiAndroid as AndroidTechIcon,
-  SiCsharp as CSharpTechIcon,
-  
-} from 'react-icons/si'

@@ -31,6 +31,7 @@ details.job_description {
     margin: 0;
     background-color: var(--neutralPrimary);
     color: var(--text);
+    white-space: normal;
     translate: 0 100%;
     z-index: 1;
 

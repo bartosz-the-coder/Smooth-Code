@@ -9,7 +9,10 @@ export const experience = [
     endDate: getFormattedDate(),
     project: {
       technologies: [
-        { name: 'React', iconName: 'React' }
+        { name: "React", iconName: "react" },
+        { name: "TypeScript", iconName: "typescript" },
+        { name: "CSS", iconName: "css" },
+        { name: "GIT", iconName: "git" },
       ],
       description: "Development of cryptocurrency trading apps in React",
     },
@@ -22,7 +25,10 @@ export const experience = [
     endDate: getFormattedDate(new Date(2022, 4, 30)),
     project: {
       technologies: [
-        { name: 'React', iconName: 'React' }
+        { name: "React", iconName: "react" },
+        { name: "TypeScript", iconName: "typescript" },
+        { name: "Styled Components", iconName: "styledcomponents" },
+        { name: "GIT", iconName: "git" },
       ],
       description: "Development an esport data hub in React ",
     },
@@ -35,7 +41,10 @@ export const experience = [
     endDate: getFormattedDate(new Date(2021, 6, 30)),
     project: {
       technologies: [
-        { name: 'React', iconName: 'React' }
+        { name: "React", iconName: "react" },
+        { name: "TypeScript", iconName: "typescript" },
+        { name: "CSS", iconName: "css" },
+        { name: "GIT", iconName: "git" },
       ],
       description:
         "Development of React web application for content management.",
@@ -49,7 +58,11 @@ export const experience = [
     endDate: getFormattedDate(new Date(2021, 2, 30)),
     project: {
       technologies: [
-        { name: 'React', iconName: 'React' }
+        { name: "React", iconName: "react" },
+        { name: "TypeScript", iconName: "typescript" },
+        { name: "CSS", iconName: "css" },
+        { name: "Styled Components", iconName: "styledcomponents" },
+        { name: "GIT", iconName: "git" },
       ],
       description:
         "Leading a development team working on various React web applications for tax return and settlement.",
@@ -63,7 +76,11 @@ export const experience = [
     endDate: getFormattedDate(new Date(2029, 8, 30)),
     project: {
       technologies: [
-        { name: 'React', iconName: 'React' }
+        { name: "React", iconName: "react" },
+        { name: "TypeScript", iconName: "typescript" },
+        { name: "Angular", iconName: "angular" },
+        { name: "CSS", iconName: "css" },
+        { name: "GIT", iconName: "git" },
       ],
       description:
         "Development of multiple React web applications for tax return and settlement.",
@@ -77,12 +94,13 @@ export const experience = [
     endDate: getFormattedDate(new Date(2017, 4, 30)),
     project: {
       technologies: [
-        { name: '.NET', iconName: 'Dotnet'}, 
-        { name: 'WPF', iconName: 'Dotnet'}, 
-        { name: 'ASP.NET', iconName: 'Dotnet'}, 
+        { name: "C#", iconName: "csharp" },
+        { name: ".NET", iconName: "dotnet" },
+        { name: "WPF", iconName: "xaml" },
+        { name: "ASP.NET", iconName: "aspnet" },
+        { name: "SVN", iconName: "svn" },
       ],
-      description:
-        `
+      description: `
           Development and maintainence of WPF client applications for market risk management.
           Development of ASP.NET WebAPI service.
         `,
@@ -96,8 +114,9 @@ export const experience = [
     endDate: getFormattedDate(new Date(2013, 7, 30)),
     project: {
       technologies: [
-        { name: 'Android', iconName: 'Android' },
-        { name: 'Java', iconName: 'Java' }
+        { name: "Android", iconName: "android" },
+        { name: "Java", iconName: "java" },
+        { name: "GIT", iconName: "git" },
       ],
       description:
         "Internship. Development of Android client application for shopping centre.",
