@@ -13,6 +13,7 @@ export const experience = [
         { name: "TypeScript", iconName: "typescript" },
         { name: "CSS", iconName: "css" },
         { name: "GIT", iconName: "git" },
+        { name: 'Jenkins', iconName: 'jenkins' }
       ],
       description: "Development of cryptocurrency trading apps in React",
     },
@@ -63,6 +64,8 @@ export const experience = [
         { name: "CSS", iconName: "css" },
         { name: "Styled Components", iconName: "styledcomponents" },
         { name: "GIT", iconName: "git" },
+        { name: 'T-SQL', iconName: 'tsql' },
+        { name: 'Azure DevOps', iconName: 'azuredevops' },
       ],
       description:
         "Leading a development team working on various React web applications for tax return and settlement.",
@@ -81,6 +84,7 @@ export const experience = [
         { name: "Angular", iconName: "angular" },
         { name: "CSS", iconName: "css" },
         { name: "GIT", iconName: "git" },
+        { name: 'T-SQL', iconName: 'tsql' },
       ],
       description:
         "Development of multiple React web applications for tax return and settlement.",
@@ -98,6 +102,7 @@ export const experience = [
         { name: ".NET", iconName: "dotnet" },
         { name: "WPF", iconName: "xaml" },
         { name: "ASP.NET", iconName: "aspnet" },
+        { name: 'T-SQL', iconName: 'tsql' },
         { name: "SVN", iconName: "svn" },
       ],
       description: `
@@ -117,6 +122,7 @@ export const experience = [
         { name: "Android", iconName: "android" },
         { name: "Java", iconName: "java" },
         { name: "GIT", iconName: "git" },
+        { name: "SQLite", iconName: "sqlite" },
       ],
       description:
         "Internship. Development of Android client application for shopping centre.",

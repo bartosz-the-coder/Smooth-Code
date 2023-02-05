@@ -30,7 +30,7 @@ function getIconComponent(iconName) {
   iconName.charAt(0).toUpperCase()
   + iconName.slice(1);
 
-  return TechIcons[`${capitalized}TechIcon`] ?? UnknownTech;
+  return TechIcons[capitalized] ?? UnknownTech;
 }
 
 const UnknownTech = () => <i>🤷</i>

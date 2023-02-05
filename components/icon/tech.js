@@ -3,23 +3,27 @@
  */
 
 export {
-  SiReact as ReactTechIcon,
-  SiDotnet as DotnetTechIcon,
-  SiJava as JavaTechIcon,
-  SiAndroid as AndroidTechIcon,
-  SiCsharp as CsharpTechIcon,
-  SiTypescript as TypescriptTechIcon,  
-  SiAngularuniversal as AngularTechIcon,
-  SiSubversion as SvnTechIcon,
-  SiStyledcomponents as StyledcomponentsTechIcon,
-  SiCss3 as CssTechIcon,
-  SiXaml as XamlTechIcon,
+  SiReact as React,
+  SiDotnet as Dotnet,
+  SiJava as Java,
+  SiAndroid as Android,
+  SiCsharp as Csharp,
+  SiTypescript as Typescript,  
+  SiAngularuniversal as Angular,
+  SiSubversion as Svn,
+  SiStyledcomponents as Styledcomponents,
+  SiCss3 as Css,
+  SiXaml as Xaml,
+  SiMicrosoftsqlserver as Tsql,
+  SiSqlite as Sqlite,
+  SiAzuredevops as Azuredevops,
+  SiJenkins as Jenkins
 } from 'react-icons/si'
 
 export {
-  ImGit as GitTechIcon,
+  ImGit as Git,
 } from 'react-icons/im'
 
 export {
-  DiDotnet as AspnetTechIcon
+  DiDotnet as Aspnet
 } from 'react-icons/di'
