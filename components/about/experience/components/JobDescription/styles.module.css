@@ -11,9 +11,10 @@ details.job_description {
     }
 
     &::after {
-      content: '⮞';
+      content: '\276F';
       display: inline-block;
-      margin-inline-start: 0.25em;
+      margin-inline-start: 0.5em;
+      font-face: serif;
       transition: 
         var(--theme-animation),
         transform 300ms ease;
