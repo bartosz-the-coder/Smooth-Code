@@ -9,11 +9,11 @@ export default function About({ skills, experience, education }) {
       <AboutSection title="My experience" type="list">
         {Children.toArray(experience.map(ExperienceRow))}
       </AboutSection>
-      <AboutSection title="My education" type="list">
-        {Children.toArray(education.map(EducationRow))}
-      </AboutSection>
       <AboutSection title="My skills" type="grid">
         {Children.toArray(skills.map(SkillRow))}
+      </AboutSection>
+      <AboutSection title="My education" type="list">
+        {Children.toArray(education.map(EducationRow))}
       </AboutSection>
     </div>
   );
