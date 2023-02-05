@@ -4,7 +4,7 @@ import { TechStack } from './components/TechStack'
 
 import styles from "./styles.module.css";
 
-export const JobDescription = ({ description, skills }) => {
+export const JobDescription = ({ description, techStack }) => {
   const detailsRef = useRef(null);
 
   useClickOutside(onOutsideClick, detailsRef)
@@ -18,7 +18,7 @@ export const JobDescription = ({ description, skills }) => {
       <article>
         <h4>Responsibilities</h4>
         <p>{description}</p>
-        <TechStack stack={skills} />
+        <TechStack stack={techStack} />
       </article>
     </details>
   );

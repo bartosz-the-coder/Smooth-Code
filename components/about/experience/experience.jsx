@@ -17,7 +17,7 @@ export const ExperienceRow = ({
         <span className={styles.job_employer}>{employer}</span>
       </div>
       <div className={styles.job_contractor}>{type}</div>
-      <JobDescription description={project.description} skills={project.technologies} />
+      <JobDescription description={project.description} techStack={project.technologies} />
     </div>
     <PeriodBadge start={startDate} end={endDate} />
   </li>
