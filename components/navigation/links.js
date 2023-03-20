@@ -1,22 +1,16 @@
 import { HomeIcon, ContactIcon, AboutIcon } from 'components/icon';
 
 export const navLinkConfig = {
-  '/': {
+  '#_': {
     name: 'Home',
     Icon: HomeIcon,
-    next: '/about',
-    previous: null
   },
-  '/about': {
+  '#about': {
     name: 'About',
     Icon: AboutIcon,
-    next: '/contact',
-    previous: '/'
   },
-  '/contact': {
+  '#contact': {
     name: 'Contact',
     Icon: ContactIcon,
-    next: null,
-    previous: '/about'
   },
 }

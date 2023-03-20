@@ -3,10 +3,15 @@ import { IconContext } from 'components/icon';
 import { Header } from 'components/header';
 import { Navigation } from 'components/navigation';
 import { ThemeSwitch } from 'components/theme-switch';
+import { useScrollSpy } from 'hooks/useScrollSpy';
+
 import styles from 'styles/App.module.css';
 import 'styles/globals.css';
 
+
+
 function SmoothApp({ Component, pageProps }) {
+  const ref = useScrollSpy()
   return (
     <IconContext.Provider value={iconStyle}>
       <div className={styles.container}>
@@ -15,7 +20,7 @@ function SmoothApp({ Component, pageProps }) {
           <ThemeSwitch />
         </Header>
         <Navigation />
-        <main>
+        <main ref={ref}>
           <Component {...pageProps} />
         </main>
       </div>
