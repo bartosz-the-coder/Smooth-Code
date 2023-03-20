@@ -1,8 +1,3 @@
-.container {
-  height: 100%;
-  scroll-snap-align: start;
-}
-
 .page_content {
   display: flex;
   flex-direction: column;

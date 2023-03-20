@@ -1,4 +1,4 @@
-export function getFormattedDate(date) {
+export function getFormattedDate(date: Date): string {
   if (!date) {
     return "currently";
   }
