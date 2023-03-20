@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-page-custom-font */
+
 import Head from 'next/head';
 import { IconContext } from 'components/icon';
 import { Header } from 'components/header';

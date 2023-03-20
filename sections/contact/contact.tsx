@@ -25,7 +25,7 @@ const ContactSection: FC = () => {
   return (
     <SectionContainer id="contact" heading="Contact">
     <div className={Styles.page_content}>
-      <p>Let's stay in touch!</p>
+      <p>Let&apos;s stay in touch!</p>
       <p>
         You can contact me via email{" "}
         <a
