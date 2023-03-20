@@ -461,6 +461,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lodash@npm:^4.17.21":
+  version: 4.17.21
+  resolution: "lodash@npm:4.17.21"
+  checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
+  languageName: node
+  linkType: hard
+
 "loose-envify@npm:^1.1.0, loose-envify@npm:^1.4.0":
   version: 1.4.0
   resolution: "loose-envify@npm:1.4.0"
@@ -1022,15 +1029,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-swipeable@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "react-swipeable@npm:7.0.0"
-  peerDependencies:
-    react: ^16.8.3 || ^17 || ^18
-  checksum: 54d15933483f7aea8f69e6a9930e220fb3bd98f314cae89a8b797e8a3bb959b68e777fe199cd7729edfe65edfcb5d933c7312ea08626f1613a6fd5d30e646598
-  languageName: node
-  linkType: hard
-
 "react@npm:^18.2.0":
   version: 18.2.0
   resolution: "react@npm:18.2.0"
@@ -1063,6 +1061,7 @@ __metadata:
     "@types/react": ^18.0.28
     "@types/react-dom": ^18.0.11
     clsx: ^1.1.1
+    lodash: ^4.17.21
     next: ^12.3.1
     postcss-nesting: ^10.2.0
     postcss-preset-env: ^7.8.3
@@ -1070,7 +1069,6 @@ __metadata:
     react-dom: ^18.2.0
     react-icons: ^4.7.1
     react-responsive: ^9.0.0
-    react-swipeable: ^7.0.0
     typescript: ^5.0.2
   languageName: unknown
   linkType: soft
