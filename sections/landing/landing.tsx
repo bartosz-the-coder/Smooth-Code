@@ -1,10 +1,9 @@
-import Image from "next/image";
-import { ImageLoader } from "components/image";
-
-import { SectionContainer } from "components/section-container";
+import Image from 'next/image';
+import { FC } from 'react';
+import { ImageLoader } from 'components/image';
+import { SectionContainer } from 'components/section-container';
 
 import Styles from './styles.module.css'
-import { FC } from "react";
 
 const LandingSection: FC = () => (
   <SectionContainer

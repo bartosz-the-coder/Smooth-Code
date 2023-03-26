@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
-import styles from "./styles.module.css";
-import { DarkModeIcon, LightModeIcon } from "components/icon";
+import { useState, useEffect } from 'react';
+import { DarkModeIcon, LightModeIcon } from 'components/icon';
+import styles from './styles.module.css';
 
-const KEY = "prefers-color-scheme";
-const LIGHT = "light";
-const DARK = "dark";
+const KEY = 'prefers-color-scheme';
+const LIGHT = 'light';
+const DARK = 'dark';
 const detectPreferedTheme = () =>
   window.localStorage.getItem(KEY) ||
   (window.matchMedia(`(${KEY}: ${LIGHT})`).matches ? LIGHT : DARK);

@@ -1,7 +1,7 @@
-import { FC, PropsWithChildren } from "react";
-import clsx from "clsx";
+import { FC, PropsWithChildren } from 'react';
+import clsx from 'clsx';
 
-import Styles from "./styles.module.css";
+import Styles from './styles.module.css';
 
 type SectionContainerProps = PropsWithChildren<{
   id: string;

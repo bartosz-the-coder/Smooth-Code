@@ -1,8 +1,8 @@
-import { useRef } from "react";
+import { useRef } from 'react';
 import { useClickOutside } from 'hooks/useClickOutside';
 import { TechStack } from './components/TechStack'
 
-import styles from "./styles.module.css";
+import styles from './styles.module.css';
 
 export const JobDescription = ({ description, techStack }) => {
   const detailsRef = useRef(null);

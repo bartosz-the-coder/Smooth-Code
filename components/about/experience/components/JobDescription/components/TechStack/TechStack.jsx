@@ -1,6 +1,6 @@
-import * as TechIcons from "components/icon/tech";
+import * as TechIcons from 'components/icon/tech';
 
-import styles from "./styles.module.css";
+import styles from './styles.module.css';
 
 export const TechStack = ({ stack }) => {
   return (
@@ -30,6 +30,7 @@ function getIconComponent(iconName) {
   iconName.charAt(0).toUpperCase()
   + iconName.slice(1);
 
+  // eslint-disable-next-line import/namespace
   return TechIcons[capitalized] ?? UnknownTech;
 }
 

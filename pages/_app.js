@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-page-custom-font */
 
 import Head from 'next/head';
-import { IconContext } from 'components/icon';
 import { Header } from 'components/header';
+import { IconContext } from 'components/icon';
 import { Navigation } from 'components/navigation';
 import { ThemeSwitch } from 'components/theme-switch';
 import { useScrollSpy } from 'hooks/useScrollSpy';
@@ -47,7 +47,7 @@ const SmoothHead = () => (
 
 const iconStyle = {
   style: {
-    verticalAlign: "middle",
+    verticalAlign: 'middle',
   }
 };
 

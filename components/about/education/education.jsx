@@ -1,6 +1,6 @@
-import { PeriodBadge } from "components/badge";
-import { SettingIcon, ReaderIcon, SchoolIcon } from "components/icon";
-import styles from "./styles.module.css";
+import { PeriodBadge } from 'components/badge';
+import { SettingIcon, ReaderIcon, SchoolIcon } from 'components/icon';
+import styles from './styles.module.css';
 
 export const EducationRow = (props) => (
   <li className={styles.education_item}>

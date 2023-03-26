@@ -1,6 +1,6 @@
-import { PeriodBadge } from "components/badge";
+import { PeriodBadge } from 'components/badge';
 import { JobDescription } from './components/JobDescription';
-import styles from "./styles.module.css";
+import styles from './styles.module.css';
 
 export const ExperienceRow = ({
   employer,

@@ -1,4 +1,4 @@
-export { IconContext } from 'react-icons'; 
+export { IconContext, IconType } from 'react-icons'; 
 export {
   IoBriefcaseOutline as AboutIcon,
   IoHomeOutline as HomeIcon,
@@ -11,4 +11,4 @@ export {
   IoStarHalfOutline as HalfStarIcon,
   IoStarSharp as FullStarIcon,
   IoStarOutline as EmptyStarIcon,
-} from "react-icons/io5";
+} from 'react-icons/io5';

@@ -1,12 +1,12 @@
-import { ChangeEventHandler, FC, FormEventHandler, MouseEventHandler, useRef, useState } from "react";
-import { SectionContainer } from "components/section-container"
+import { ChangeEventHandler, FC, FormEventHandler, MouseEventHandler, useRef, useState } from 'react';
+import { SectionContainer } from 'components/section-container'
 
 import Styles from './styles.module.css'
 
 const NAME_FIELD_ID = 'name'
 
 const ContactSection: FC = () => {
-  const formRef = useRef(null);
+  const formRef = useRef<HTMLFormElement>(null);
   const [name, setName] = useState<string>();
   const [messageLength, setMessageLength] = useState<number>(0);
 
@@ -15,7 +15,7 @@ const ContactSection: FC = () => {
     setName(event.target[NAME_FIELD_ID].value);
   };
 
-  const onReset: FormEventHandler<HTMLFormElement> = () => setName(null);
+  const onReset: FormEventHandler<HTMLFormElement> = () => setName(undefined);
   const onDismiss: MouseEventHandler = () => formRef.current.reset();
 
   const onMessageChange: ChangeEventHandler<HTMLTextAreaElement> = (event) => {
@@ -27,7 +27,7 @@ const ContactSection: FC = () => {
     <div className={Styles.page_content}>
       <p>Let&apos;s stay in touch!</p>
       <p>
-        You can contact me via email{" "}
+        You can contact me via email{' '}
         <a
           className={Styles.contact_link}
           href="mailto:contact@smoothcode.pl"
@@ -37,7 +37,7 @@ const ContactSection: FC = () => {
       </p>
       <strong>OR</strong>
       <p>
-        Visit my LinkedIn profile{" "}
+        Visit my LinkedIn profile{' '}
         <a
           className={Styles.contact_link}
           href="https://www.linkedin.com/in/bartoszn/"

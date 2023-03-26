@@ -1,7 +1,7 @@
 
-import { useEffect, useRef, useMemo } from "react";
-import { useRouter } from "next/router";
-import _debounce from "lodash/debounce";
+import { useRouter } from 'next/router';
+import { useEffect, useRef, useMemo } from 'react';
+import _debounce from 'lodash/debounce';
 
 export function useScrollSpy() {
   const { push } = useRouter();
@@ -24,7 +24,7 @@ export function useScrollSpy() {
           threshold: 1,
         }
       ),
-    [containerRef.current]
+    [push]
   );
 
   useEffect(() => {
