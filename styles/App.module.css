@@ -18,14 +18,14 @@
 
 .container > main {
   grid-area: main;
-  overflow-y: auto;
-  background-color: var(--main-background);
-  color: var(--text);
   padding: 1rem 2rem;
   border-left-width: 1px;
   border-top-width: 1px;
   border-style: solid;
   border-color: var(--grey4);
+  background-color: var(--main-background);
+  color: var(--text);
+  overflow-y: auto;
   scroll-behavior:  smooth;
   scroll-snap-type: y mandatory;
   scroll-padding-top: 1rem;

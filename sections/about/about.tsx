@@ -1,17 +1,17 @@
-import { Children, FC } from "react";
+import { Children, FC } from 'react';
 import {
   AboutSection as AboutSubsection,
   EducationRow,
   ExperienceRow,
   SkillRow,
-} from "components/about";
-
-import { SectionContainer } from "components/section-container";
+} from 'components/about';
+import { SectionContainer } from 'components/section-container';
+import { Education, Experience, Skills } from 'data/types';
 
 type AboutSectionProps = {
-  skills: any[];
-  experience: any[];
-  education: any[]
+  skills: Skills;
+  experience: Experience;
+  education: Education;
 }
 
 const AboutSection: FC<AboutSectionProps> = ({ skills, experience, education }) => {

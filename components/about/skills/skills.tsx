@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import {
   FullStarIcon,
   EmptyStarIcon,
@@ -6,7 +7,12 @@ import {
 } from 'components/icon';
 import styles from './styles.module.css';
 
-export const SkillRow = ({ name, level }) => {
+type Props = {
+  name: string;
+  level: number;
+}
+
+export const SkillRow: FC<Props> = ({ name, level }) => {
   return (
     <li className={styles.skill_item}>
       <div>{name}</div>

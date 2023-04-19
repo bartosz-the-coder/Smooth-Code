@@ -1,3 +1,4 @@
+import { GetStaticProps } from 'next';
 import { FC } from 'react';
 import { Experience, Skills, Education } from 'data/types';
 import AboutSection from 'sections/about';
@@ -26,7 +27,7 @@ const Home: FC<HomeProps> = ({ skills, experience, education }) => {
 
 export default Home
 
-export async function getStaticProps(context) {
+export const getStaticProps: GetStaticProps = async function(context) {
   const { skills, experience, education } = await import('data');
   return {
     props: {

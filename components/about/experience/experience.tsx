@@ -1,8 +1,11 @@
+import { FC } from 'react';
 import { PeriodBadge } from 'components/badge';
 import { JobDescription } from './components/JobDescription';
 import styles from './styles.module.css';
 
-export const ExperienceRow = ({
+type Props = import('data/types').Experience[number];
+
+export const ExperienceRow: FC<Props> = ({
   employer,
   title,
   type,

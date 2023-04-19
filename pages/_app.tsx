@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-page-custom-font */
 
+import { AppType } from 'next/app';
 import Head from 'next/head';
 import { Header } from 'components/header';
 import { IconContext } from 'components/icon';
@@ -10,9 +11,7 @@ import { useScrollSpy } from 'hooks/useScrollSpy';
 import styles from 'styles/App.module.css';
 import 'styles/globals.css';
 
-
-
-function SmoothApp({ Component, pageProps }) {
+const SmoothApp: AppType = ({ Component, pageProps }) => {
   const ref = useScrollSpy()
   return (
     <IconContext.Provider value={iconStyle}>
