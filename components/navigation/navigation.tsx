@@ -35,9 +35,9 @@ Navigation.displayName = 'Navigation'
 
 
 const NavLink = ({ href, children }) => {
-  const { route, asPath } = useRouter(); 
+  const { asPath } = useRouter(); 
   const linkClassNames = clsx(styles.link, {
-    [styles.link_active]: asPath === `${route}${href}`,
+    [styles.link_active]: asPath === href,
   });
 
   return (

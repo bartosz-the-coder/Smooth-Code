@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import Styles from './styles.module.css';
 
 type SectionContainerProps = PropsWithChildren<{
-  id: string;
+  id: SectionId;
   heading: string;
   className?: string;
   headingClassName?: string;
