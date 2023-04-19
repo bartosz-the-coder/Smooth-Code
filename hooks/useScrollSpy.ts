@@ -1,44 +1,65 @@
-
-import { useRouter } from 'next/router';
+import { NextRouter, useRouter } from 'next/router';
 import { useEffect, useRef, useMemo } from 'react';
-import _debounce from 'lodash/debounce';
+import { debounce } from 'lodash';
+
+type EnchancedIntersectionObserver = IntersectionObserver & {
+  paused?: boolean
+}
 
 export function useScrollSpy() {
-  const { push } = useRouter();
   const containerRef = useRef<HTMLElement>(null);
+  const routerRef = useRef<NextRouter>();
+  routerRef.current = useRouter();
 
-  const observer = useMemo<IntersectionObserver>(
-    () => typeof window === 'undefined' ? null :
-      new IntersectionObserver(
-        (entries) => {
-          const visible = entries.find((e) => e.isIntersecting);
-          if (
-            visible &&
-            !window.location.hash.endsWith(visible.target.id)
-          ) {
-            push({ hash: `#${visible.target.id}` });
-          }
-        },
-        {
+  const observer = useMemo<EnchancedIntersectionObserver>(
+    () =>
+      typeof window === 'undefined'
+        ? null
+        : new IntersectionObserver(getObserverCallback(
+          routerRef.current
+        ), {
           root: containerRef.current,
-          threshold: 1,
-        }
-      ),
-    [push]
+          threshold: 0.25
+        }),
+    []
   );
 
   useEffect(() => {
     if (!observer) {
-      return
+      return;
     }
 
     const container = containerRef.current;
     Array.from(container.children).forEach((el) => observer.observe(el));
 
     return () => {
-      Array.from(container.children).forEach((el) => observer.unobserve(el));
-    };
+      observer.disconnect();
+    }
   }, [observer]);
 
   return containerRef;
+}
+
+function getObserverCallback(
+  router: NextRouter
+): IntersectionObserverCallback {
+  const push = debounce(router.push, 250, { trailing: true });
+  return (entries) => {
+    const [visible] = entries
+      .filter((e) => e.isIntersecting)
+      .sort((one, other) => one.time - other.time)
+
+    if (!visible) {
+      return
+    }
+
+    const hash = `#${visible.target.id}`;
+    push({ hash })?.catch(
+      (err: Error) => {
+        if ('cancelled' in err && !err.cancelled) {
+          throw err;
+        }
+      }
+    );
+  };
 }
