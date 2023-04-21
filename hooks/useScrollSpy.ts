@@ -43,7 +43,7 @@ export function useScrollSpy() {
 function getObserverCallback(
   router: NextRouter
 ): IntersectionObserverCallback {
-  const push = debounce(router.push, 250, { trailing: true });
+  const push = debounce(router.push, 100, { trailing: true });
   return (entries) => {
     const [visible] = entries
       .filter((e) => e.isIntersecting)
