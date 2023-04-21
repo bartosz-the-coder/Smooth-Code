@@ -11,4 +11,5 @@ export {
   IoStarHalfOutline as HalfStarIcon,
   IoStarSharp as FullStarIcon,
   IoStarOutline as EmptyStarIcon,
+  IoConstructOutline as SkillsIcon
 } from 'react-icons/io5';

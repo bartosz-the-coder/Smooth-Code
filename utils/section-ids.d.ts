@@ -1,5 +1,10 @@
 export {}
 
 declare global {
-  type SectionId = '_' | 'about' | 'contact';
+  type SectionId = 
+    | '_' 
+    | 'skills' 
+    | 'experience' 
+    | 'education' 
+    | 'contact';
 }

@@ -1,0 +1,7 @@
+{
+  "eslint.packageManager": "yarn",
+  "eslint.validate": ["typescript", "typescriptreact"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+}

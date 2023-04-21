@@ -1,9 +1,11 @@
 import { GetStaticProps } from 'next';
 import { FC } from 'react';
 import { Experience, Skills, Education } from 'data/types';
-import AboutSection from 'sections/about';
 import ContactSection from 'sections/contact';
+import EducationSection from 'sections/education';
+import ExperienceSection from 'sections/experience';
 import LandingSection from 'sections/landing';
+import SkillsSection from 'sections/skills';
 
 type HomeProps = {
   skills: Skills;
@@ -15,11 +17,9 @@ const Home: FC<HomeProps> = ({ skills, experience, education }) => {
   return (
     <>
       <LandingSection />
-      <AboutSection
-        education={education}
-        experience={experience}
-        skills={skills}
-      />
+      <SkillsSection skills={skills} />
+      <ExperienceSection experience={experience} />
+      <EducationSection education={education} />
       <ContactSection />
     </>
   );

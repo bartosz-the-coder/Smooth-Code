@@ -1,4 +1,4 @@
-import { HomeIcon, ContactIcon, AboutIcon, IconType } from 'components/icon';
+import { HomeIcon, ContactIcon, AboutIcon, IconType, SchoolIcon, SkillsIcon } from 'components/icon';
 
 type Path = `/#${SectionId}`
 
@@ -12,10 +12,19 @@ export const navLinkConfig: Record<Path, NavLinkConfig> = {
     name: 'Home',
     Icon: HomeIcon,
   },
-  '/#about': {
-    name: 'About',
+  '/#skills': {
+    name: 'Skills',
+    Icon: SkillsIcon,
+  },
+  '/#experience': {
+    name: 'Experience',
     Icon: AboutIcon,
   },
+  '/#education': {
+    name: 'Education',
+    Icon: SchoolIcon,
+  },
+
   '/#contact': {
     name: 'Contact',
     Icon: ContactIcon,

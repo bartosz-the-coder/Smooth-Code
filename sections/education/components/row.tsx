@@ -1,8 +1,10 @@
+import { FC } from 'react';
 import { PeriodBadge } from 'components/badge';
 import { SettingIcon, ReaderIcon, SchoolIcon } from 'components/icon';
+import { Education } from 'data/types';
 import styles from './styles.module.css';
 
-export const EducationRow = (props) => (
+export const EducationRow: FC<Education[number]> = (props) => (
   <li className={styles.education_item}>
     <div className={styles.title_wrapper}>
       <div className={styles.name}>{props.name}</div>

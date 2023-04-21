@@ -16,11 +16,12 @@ export const SkillRow: FC<Props> = ({ name, level }) => {
   return (
     <li className={styles.skill_item}>
       <div>{name}</div>
-      <div className={styles.stars}>{createLevelStars(level)}</div>
+      <div className={styles.stars}>{renderLevelStars(level)}</div>
     </li>
   );
 };
-const createLevelStars = (level: number) => {
+
+const renderLevelStars = (level: number) => {
   const fiveGradeLevel = level * 10;
   const fullStars = Math.floor(fiveGradeLevel / 2);
   const hasHalfStar = Boolean(fiveGradeLevel % 2);
