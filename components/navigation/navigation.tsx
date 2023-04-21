@@ -22,9 +22,9 @@ export const Navigation = memo(() => (
     </div>
     <ul className={styles.list}>
       {Object.entries(navLinkConfig).map(([route, { Icon, name }]) => (
-        <NavLink key={name} href={route}>
+        <NavLink key={name} href={route} aria-label={name}>
           <Icon />
-          {name}
+          <label className={styles.label}>{name}</label>
         </NavLink>
       ))}
     </ul>
@@ -37,7 +37,7 @@ Navigation.displayName = 'Navigation'
 const NavLink = ({ href, children }) => {
   const { asPath } = useRouter(); 
   const linkClassNames = clsx(styles.link, {
-    [styles.link_active]: asPath === href,
+    [styles.active]: asPath === href,
   });
 
   return (

@@ -23,8 +23,10 @@ ul.list {
 li.link {
   position: relative;
   height: 50px;
+  padding: 0.25em 0.5em;
   text-transform: uppercase;
   transition: opacity 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+
   opacity: var(--opacity);
   font-size: clamp(0.8rem, 3vmin, 1.5rem);
   letter-spacing: 2px;
@@ -44,7 +46,7 @@ li.link {
     opacity: var(--opacity);
   }
 
-  &.link_active {
+  &.active {
     opacity: var(--opacity-active);
     
     &::after {
@@ -54,7 +56,7 @@ li.link {
   }
 
   &:hover,
-  &.link_active:hover {
+  &.active:hover {
     opacity: var(--opacity-hover);
   }
 
@@ -67,7 +69,6 @@ li.link {
     display: flex;
     align-items: center;
     height: 100%;
-    padding: 5px 10px;
     text-decoration: none;
     color: inherit;
     
@@ -95,14 +96,40 @@ div.logo {
 
   ul.list {
     width: auto;
+    margin-inline: auto;
   }
 
   li.link {
     display: inline-block;
+
+    & > a > svg {
+      margin: 0;
+    }
+  
+    & .label {
+      width: 0;
+      opacity: 0;
+      text-align: center;
+      transition-property: width, opacity;
+      transition-timing-function: ease-in;
+      transition-duration: 250ms;
+    }
+
+    &.active {
+      & .label {
+        width: 80px;
+        opacity: 1;
+      }
+
+      & > a > svg {
+        margin-inline-end: 0.5em;
+      }
+    }
   }
 
+
   li.link::after {
-    left: 10%;
+    left: 5%;
     z-index: 4;
     width: 90%;
   }

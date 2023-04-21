@@ -1,8 +1,13 @@
-import * as TechIcons from 'components/icon/tech';
-
+import { FC } from 'react';
+import { getIconComponent } from 'components/icon/utils';
+import { Tech } from 'data/types';
 import styles from './styles.module.css';
 
-export const TechStack = ({ stack }) => {
+type TechStackProps = {
+  stack: Tech[]
+}
+
+export const TechStack: FC<TechStackProps> = ({ stack }) => {
   return (
     <>
       <h4>Tech stack</h4>
@@ -15,7 +20,11 @@ export const TechStack = ({ stack }) => {
   );
 };
 
-const TechItem = ({ tech }) => {
+type TechProps = {
+  tech: Tech
+}
+
+const TechItem: FC<TechProps> = ({ tech }) => {
   const TechIcon = getIconComponent(tech.iconName);
   return (
     <li className={styles.tech_item}>
@@ -25,13 +34,3 @@ const TechItem = ({ tech }) => {
   );
 };
 
-function getIconComponent(iconName) {
-  const capitalized =
-  iconName.charAt(0).toUpperCase()
-  + iconName.slice(1);
-
-  // eslint-disable-next-line import/namespace
-  return TechIcons[capitalized] ?? UnknownTech;
-}
-
-const UnknownTech = () => <i>🤷</i>

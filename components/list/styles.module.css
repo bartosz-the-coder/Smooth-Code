@@ -28,7 +28,7 @@
 }
 
 .square {
-  --grid-item-basis: 120px;
+  --grid-item-basis: 150px;
 
   & > li {
     flex-direction: column;
@@ -46,7 +46,7 @@
 
 @media (1366px <= width) {
   .square {
-    --grid-item-basis: 150px;
+    --grid-item-basis: 200px;
   }
 }
 

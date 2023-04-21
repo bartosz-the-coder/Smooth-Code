@@ -5,17 +5,20 @@ import {
   HalfStarIcon,
   IconType,
 } from 'components/icon';
+import { getIconComponent } from 'components/icon/utils';
+import { Skills } from 'data/types';
 import styles from './styles.module.css';
 
-type Props = {
-  name: string;
-  level: number;
-}
+type Props = Skills[number]
 
-export const SkillRow: FC<Props> = ({ name, level }) => {
+export const SkillRow: FC<Props> = ({ name, level, icon }) => {
+  const TechIcon = getIconComponent(icon);
   return (
     <li className={styles.skill_item}>
-      <div>{name}</div>
+      <div className={styles.skill_name}>
+        <TechIcon />
+        {name}
+      </div>
       <div className={styles.stars}>{renderLevelStars(level)}</div>
     </li>
   );

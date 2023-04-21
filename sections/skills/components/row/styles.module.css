@@ -1,10 +1,15 @@
-li.skill_item.skill_item {
+li.skill_item {
   white-space: nowrap;
 }
 
 li.skill_item > div.stars {
   display: flex;
   color: var(--themePrimary);
+}
+
+.skill_name  {
+  display: flex;
+  gap: 0.5em;
 }
 
 svg.star {
