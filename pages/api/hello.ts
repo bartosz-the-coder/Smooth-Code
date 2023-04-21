@@ -1,6 +1,8 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-const helloApi = (req, res) => {
+import { NextApiHandler } from 'next';
+
+const helloApi: NextApiHandler = (req, res) => {
   res.status(200).json({ name: 'John Doe' })
 }
 

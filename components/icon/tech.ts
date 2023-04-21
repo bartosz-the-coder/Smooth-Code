@@ -5,7 +5,6 @@
 export {
   SiReact as React,
   SiDotnet as Dotnet,
-  SiJava as Java,
   SiAndroid as Android,
   SiCsharp as Csharp,
   SiTypescript as Typescript,  
@@ -25,5 +24,6 @@ export {
 } from 'react-icons/im'
 
 export {
-  DiDotnet as Aspnet
+  DiDotnet as Aspnet,
+  DiJava as Java
 } from 'react-icons/di'
