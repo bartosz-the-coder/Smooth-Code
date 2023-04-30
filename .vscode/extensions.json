@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "naumovs.color-highlight",
+    "esbenp.prettier-vscode",
+    "wallabyjs.console-ninja",
+    "dbaeumer.vscode-eslint",
+    "cpylua.language-postcss"
+  ]
+}
