@@ -5,6 +5,5 @@ declare global {
     | '_' 
     | 'skills' 
     | 'experience' 
-    | 'education' 
     | 'contact';
 }

@@ -1,8 +1,7 @@
 import { GetStaticProps } from 'next';
 import { FC } from 'react';
-import { Experience, Skills, Education } from 'data/types';
+import { Experience, Skills } from 'data/types';
 import ContactSection from 'sections/contact';
-import EducationSection from 'sections/education';
 import ExperienceSection from 'sections/experience';
 import LandingSection from 'sections/landing';
 import SkillsSection from 'sections/skills';
@@ -10,16 +9,14 @@ import SkillsSection from 'sections/skills';
 type HomeProps = {
   skills: Skills;
   experience: Experience;
-  education: Education;
 };
 
-const Home: FC<HomeProps> = ({ skills, experience, education }) => {
+const Home: FC<HomeProps> = ({ skills, experience }) => {
   return (
     <>
       <LandingSection />
       <SkillsSection skills={skills} />
       <ExperienceSection experience={experience} />
-      <EducationSection education={education} />
       <ContactSection />
     </>
   );
@@ -28,12 +25,11 @@ const Home: FC<HomeProps> = ({ skills, experience, education }) => {
 export default Home
 
 export const getStaticProps: GetStaticProps = async function(context) {
-  const { skills, experience, education } = await import('data');
+  const { skills, experience } = await import('data');
   return {
     props: {
       skills,
       experience,
-      education,
     },
   };
 }
