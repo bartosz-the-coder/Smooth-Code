@@ -21,8 +21,8 @@ module.exports = (phase) => {
   return {
     ...config,
     images: {
-      loader: "cloudinary",
-      path: "/",
+      loader: 'cloudinary',
+      path: '/',
     },
   };
 };

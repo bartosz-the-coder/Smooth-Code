@@ -1,25 +1,25 @@
-li.education_item.education_item {
+li.item {
+  container: item / inline-size;
   flex-direction: column;
   align-items: revert;
 
   & > section {
     display: flex;
-    gap: 0.5em;
+  }
 
-    & > h3 {
-      display: inline-flex;
-      align-items: center;
-      font-size: 80%;
-      font-weight: 400;
-      flex: 1; 
+  & h3 {
+    display: inline-flex;
+    align-items: center;
+    font-size: 80%;
+    font-weight: 400;      
+    flex: 1; 
 
-      & > span {
-        margin-left: 1vmin;
-      }
-  
-      & > svg {
-        font-size: 180%;        
-      }
+    & > span {
+      margin-left: 1vmin;
+    }
+
+    & > svg {
+      font-size: 180%;        
     }
   }
 }
@@ -34,5 +34,17 @@ div.title_wrapper {
 
   & > :last-child {
     margin: 0;
+  }
+}
+
+@container item (max-width: 350px) {
+  div.title_wrapper {
+    flex-direction: column;
+    align-items: start;
+    gap: 1em;
+  }
+
+  li.item h3 {
+    margin-block: 0;
   }
 }

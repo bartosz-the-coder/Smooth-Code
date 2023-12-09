@@ -1,6 +1,6 @@
 .layout {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(var(--grid-item-basis), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(var(--grid-item-basis), 1fr));
   gap: 0.5em;
   flex: 8 1;
   width: 100%;

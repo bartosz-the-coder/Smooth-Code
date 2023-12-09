@@ -5,9 +5,9 @@ import { Education } from 'data/types';
 import styles from './styles.module.css';
 
 export const EducationRow: FC<Education[number]> = (props) => (
-  <li className={styles.education_item}>
+  <li className={styles.item}>
     <div className={styles.title_wrapper}>
-      <div className={styles.name}>{props.name}</div>
+      <div>{props.name}</div>
       <PeriodBadge start={props.startDate} end={props.endDate} />
     </div>
     <section>

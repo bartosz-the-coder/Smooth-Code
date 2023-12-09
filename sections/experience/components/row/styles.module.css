@@ -22,9 +22,15 @@
   color: var(--textSecondary);
 }
 
-@media (width <= 900px) or (width >= 1366px) {
+@media (width > 1000px) {
   .experience_item {
-    --grid-item-basis: 400px;
+    --grid-item-basis: 40%;
+  }
+}
+
+@media (width <= 900px) {
+  .experience_item {
+    --grid-item-basis: 420px;
   }
 
   .job_employer {
