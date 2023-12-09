@@ -31,7 +31,7 @@ export const experience = [
         { name: 'Styled Components', iconName: 'styledcomponents' },
         { name: 'GIT', iconName: 'git' },
       ],
-      description: 'Development an esport data hub in React ',
+      description: 'Development of esport data hub in React ',
     },
   },
   {
@@ -68,7 +68,7 @@ export const experience = [
         { name: 'Azure DevOps', iconName: 'azuredevops' },
       ],
       description:
-        'Leading a development team working on various React web applications for tax return and settlement.',
+        'Leading the development team working on various React web applications for tax return and settlement.',
     },
   },
   {

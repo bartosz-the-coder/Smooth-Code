@@ -44,14 +44,14 @@
   }
 }
 
-@media (1366px <= width) {
+@media (1366px < width) {
   .square {
     --grid-item-basis: 200px;
   }
 }
 
-@media (800px <= width) {
+@media (800px < width) {
   .rectangle {
-    --grid-item-basis: 400px;
+    --grid-item-basis: 450px;
   }
 }

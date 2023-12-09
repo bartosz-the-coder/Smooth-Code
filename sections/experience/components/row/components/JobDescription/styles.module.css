@@ -14,54 +14,16 @@ details.job_description {
       content: '\276F';
       display: inline-block;
       margin-inline-start: 0.5em;
-      font-face: serif;
+      font-family: serif;
       transition:
         var(--theme-animation),
         transform 300ms ease;
     }
   }
 
-  & > article {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    outline: 1px solid var(--neutralSecondary);
-    border-radius: 0 0 0.25em 0.25em;
-    padding: 0.5rem 1rem 2rem;
-    margin: 0;
-    background-color: var(--neutralPrimary);
-    color: var(--text);
-    white-space: normal;
-    translate: 0 100%;
-    z-index: 1;
-
-    box-shadow:
-      0px 0.25rem 0.75rem -0.25rem var(--grey1),
-      0px 0.5rem 0.75rem -0.5rem var(--grey4);
-  }
-
   &[open] {
     & > summary::after {
       transform: rotate(90deg);
     }
-
-    & > article {
-      transform-origin: top;
-      animation: dropdown 300ms ease-in-out;
-    }
-  }
-}
-
-@keyframes dropdown {
-  0% {
-    opacity: 0;
-    margin-top: 1rem;
-    scale: 1 0;
-  }
-  100% {
-    opacity: 1;
-    margin-top: 0px;
-    scale: 1 1;
   }
 }
