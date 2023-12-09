@@ -6,19 +6,27 @@
     "dev": "next dev",
     "build": "next build && next export",
     "build:only": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint --max-warnings=0"
   },
   "dependencies": {
     "clsx": "^1.1.1",
+    "lodash": "^4.17.21",
     "next": "^12.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
-    "react-responsive": "^9.0.0",
-    "react-swipeable": "^7.0.0"
+    "react-responsive": "^9.0.0"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.191",
+    "@types/node": "18.15.5",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "eslint": "8.36.0",
+    "eslint-config-next": "13.2.4",
     "postcss-nesting": "^10.2.0",
-    "postcss-preset-env": "^7.8.3"
+    "postcss-preset-env": "^7.8.3",
+    "typescript": "^5.0.2"
   }
 }

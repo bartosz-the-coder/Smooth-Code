@@ -1,0 +1,65 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1rem;
+  justify-content: center;
+  text-align: center;
+  font-size: 10vmin;
+  user-select: none;
+  scroll-snap-align: start;
+}
+
+.container > div {
+  align-self: center;
+  width: fit-content;
+  max-width: 25ch;
+  margin-inline: auto;
+  text-align: justify;
+  white-space: nowrap;
+}
+
+.title, .subtitle {
+  margin: 2rem 0;
+}
+
+.subtitle {
+  border-right: .1em solid var(--themePrimary);
+  letter-spacing: 0.01em;
+  font-size: clamp(0.5rem, 8vmin, 4rem);
+  font-style: italic;
+  animation-name: typing, blink-caret;
+  animation-duration: 3500ms, 350ms;
+  animation-timing-function: steps(30, end), step-end;
+  animation-fill-mode: both;
+  animation-iteration-count: 1, 8;
+  overflow: hidden;
+}
+
+.subtitle:nth-of-type(2) {
+  animation-delay: 4000ms;
+}
+
+ @keyframes typing {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--themePrimary) }
+}
+
+div.logo {
+  position: relative;
+  height: 50%;
+  max-height: 50vmin;
+  margin: 2vmin;
+  display: none;
+}
+
+@media only screen and (max-width: 600px) { 
+  div.logo {
+    display: block;
+  }
+}

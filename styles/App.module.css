@@ -5,7 +5,7 @@
     "header header"
     "nav main";
   grid-template-rows: 80px 1fr;
-  grid-template-columns: min(20vw, 250px) 1fr;
+  grid-template-columns: min(25vw, 200px) 1fr;
 }
 
 .container > header {
@@ -18,13 +18,17 @@
 
 .container > main {
   grid-area: main;
-  overflow-y: auto;
-  background-color: var(--main-background);
-  color: var(--text);
+  padding: 1rem 2rem;
   border-left-width: 1px;
   border-top-width: 1px;
   border-style: solid;
   border-color: var(--grey4);
+  background-color: var(--main-background);
+  color: var(--text);
+  overflow-y: auto;
+  scroll-behavior:  smooth;
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 1rem;
 }
 
 @media only screen and (max-width: 600px) {
@@ -33,7 +37,13 @@
       "header"
       "nav"
       "main";
-    grid-template-rows: 80px 70px auto; 
+    grid-template-rows: 80px auto 1fr; 
     grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .container > main {
+    padding-inline: 3vmin;
   }
 }

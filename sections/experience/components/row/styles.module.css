@@ -1,0 +1,44 @@
+.experience_item {
+  position: relative;
+  width: 100%;
+  line-height: 1.25;
+}
+
+.job_details {
+  white-space: nowrap;
+}
+
+.job_title {
+  font-weight: bold;
+}
+
+.job_employer::before {
+  content: '@';
+  margin-inline: 0.25em;
+}
+
+.job_contractor {
+  font-size: 0.85em;
+  color: var(--textSecondary);
+}
+
+@media (width > 1000px) {
+  .experience_item {
+    --grid-item-basis: 40%;
+  }
+}
+
+@media (width <= 900px) {
+  .experience_item {
+    --grid-item-basis: 420px;
+  }
+
+  .job_employer {
+    display: block;
+    font-size: 0.9em;
+  }
+
+  .job_employer::before {
+    content: none;
+  }
+}
