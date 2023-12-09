@@ -16,4 +16,9 @@
   padding-inline: 1em;
   padding-block: 0.5em;
   background-color: var(--themePrimary);
+  white-space: nowrap;
+
+  > .icon {
+    flex-shrink: 0;
+  }
 }

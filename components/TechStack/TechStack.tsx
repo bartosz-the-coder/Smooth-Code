@@ -28,7 +28,7 @@ const TechItem: FC<TechProps> = ({ tech }) => {
   const TechIcon = getIconComponent(tech.iconName);
   return (
     <li className={styles.tech_item}>
-      <TechIcon />
+      <TechIcon className={styles.icon} />
       {tech.name}
     </li>
   );
