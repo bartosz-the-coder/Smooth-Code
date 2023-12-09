@@ -49,13 +49,13 @@
 .contact_form_overlay::before {
   position: absolute;
   content: '';
-  background: var(--modal-background); 
+  background: var(--modal-background);
   inset: 0;
   opacity: 0.95;
   z-index: -1;
 }
 
-.contact_form_overlay[data-visible="true"] {
+.contact_form_overlay[data-visible='true'] {
   display: block;
 }
 

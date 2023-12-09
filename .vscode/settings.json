@@ -3,5 +3,5 @@
   "eslint.validate": ["typescript", "typescriptreact"],
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit"
-  },
+  }
 }

@@ -4,8 +4,8 @@ import { Tech } from 'data/types';
 import styles from './styles.module.css';
 
 type TechStackProps = {
-  stack: Tech[]
-}
+  stack: Tech[];
+};
 
 export const TechStack: FC<TechStackProps> = ({ stack }) => {
   return (
@@ -21,8 +21,8 @@ export const TechStack: FC<TechStackProps> = ({ stack }) => {
 };
 
 type TechProps = {
-  tech: Tech
-}
+  tech: Tech;
+};
 
 const TechItem: FC<TechProps> = ({ tech }) => {
   const TechIcon = getIconComponent(tech.iconName);
@@ -33,4 +33,3 @@ const TechItem: FC<TechProps> = ({ tech }) => {
     </li>
   );
 };
-

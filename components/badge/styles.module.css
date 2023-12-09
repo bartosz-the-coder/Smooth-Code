@@ -14,7 +14,6 @@
   user-select: none;
 }
 
-
 @media only screen and (max-width: 600px) {
   .badge {
     padding-inline: 0.25em;

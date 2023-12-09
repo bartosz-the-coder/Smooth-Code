@@ -15,7 +15,7 @@ details.job_description {
       display: inline-block;
       margin-inline-start: 0.5em;
       font-face: serif;
-      transition: 
+      transition:
         var(--theme-animation),
         transform 300ms ease;
     }
@@ -36,7 +36,7 @@ details.job_description {
     translate: 0 100%;
     z-index: 1;
 
-    box-shadow: 
+    box-shadow:
       0px 0.25rem 0.75rem -0.25rem var(--grey1),
       0px 0.5rem 0.75rem -0.5rem var(--grey4);
   }
@@ -55,13 +55,13 @@ details.job_description {
 
 @keyframes dropdown {
   0% {
-    opacity: 0; 
-    margin-top: 1rem; 
-    scale: 1 0; 
-}
-  100%  {
-    opacity: 1; 
-    margin-top: 0px; 
-    scale: 1 1; 
+    opacity: 0;
+    margin-top: 1rem;
+    scale: 1 0;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 0px;
+    scale: 1 1;
   }
 }

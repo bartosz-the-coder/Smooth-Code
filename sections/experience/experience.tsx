@@ -6,7 +6,7 @@ import { ExperienceRow } from './components/row';
 
 type ExperienceSectionProps = {
   experience: Experience[];
-}
+};
 
 const ExperienceSection: FC<ExperienceSectionProps> = ({ experience }) => {
   return (
@@ -16,6 +16,6 @@ const ExperienceSection: FC<ExperienceSectionProps> = ({ experience }) => {
       </List>
     </SectionContainer>
   );
-} 
+};
 
 export default ExperienceSection;

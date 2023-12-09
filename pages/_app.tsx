@@ -12,7 +12,7 @@ import styles from 'styles/App.module.css';
 import 'styles/globals.css';
 
 const SmoothApp: AppType = ({ Component, pageProps }) => {
-  const ref = useScrollSpy()
+  const ref = useScrollSpy();
   return (
     <IconContext.Provider value={iconStyle}>
       <div className={styles.container}>
@@ -27,7 +27,7 @@ const SmoothApp: AppType = ({ Component, pageProps }) => {
       </div>
     </IconContext.Provider>
   );
-}
+};
 
 const SmoothHead = () => (
   <Head>
@@ -38,16 +38,16 @@ const SmoothHead = () => (
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest"></link>
     <link
-        href="https://fonts.googleapis.com/css2?family=Economica:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet"
-      />
+      href="https://fonts.googleapis.com/css2?family=Economica:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
   </Head>
 );
 
 const iconStyle = {
   style: {
     verticalAlign: 'middle',
-  }
+  },
 };
 
 export default SmoothApp;

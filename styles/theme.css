@@ -1,6 +1,6 @@
 :root {
   --themeTernary: green;
-  --error: var(--red1)
+  --error: var(--red1);
 }
 
 body[data-theme='light'] {

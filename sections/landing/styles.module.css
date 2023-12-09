@@ -19,12 +19,13 @@
   white-space: nowrap;
 }
 
-.title, .subtitle {
+.title,
+.subtitle {
   margin: 2rem 0;
 }
 
 .subtitle {
-  border-right: .1em solid var(--themePrimary);
+  border-right: 0.1em solid var(--themePrimary);
   letter-spacing: 0.01em;
   font-size: clamp(0.5rem, 8vmin, 4rem);
   font-style: italic;
@@ -40,14 +41,23 @@
   animation-delay: 4000ms;
 }
 
- @keyframes typing {
-  0% { width: 0; }
-  100% { width: 100%; }
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 @keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: var(--themePrimary) }
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--themePrimary);
+  }
 }
 
 div.logo {
@@ -58,7 +68,7 @@ div.logo {
   display: none;
 }
 
-@media only screen and (max-width: 600px) { 
+@media only screen and (max-width: 600px) {
   div.logo {
     display: block;
   }

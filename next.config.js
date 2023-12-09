@@ -1,16 +1,15 @@
 const { PHASE_DEVELOPMENT_SERVER } = require('next/constants');
 
 /**
- * 
- * @param {string} phase 
+ *
+ * @param {string} phase
  * @returns {import('next').NextConfig}
  */
 module.exports = (phase) => {
-
   /**
    * @type {import('next').NextConfig}
    */
-  const config =  {
+  const config = {
     trailingSlash: true,
   };
 

@@ -6,16 +6,14 @@ import type { Skill } from 'data/types';
 
 type SkillsSectionProps = {
   skills: Skill[];
-}
+};
 
 const SkillsSection: FC<SkillsSectionProps> = ({ skills }) => {
   return (
     <SectionContainer id="skills" heading="My Skills">
-      <List type="square">
-        {Children.toArray(skills.map(SkillRow))}
-      </List>
+      <List type="square">{Children.toArray(skills.map(SkillRow))}</List>
     </SectionContainer>
   );
-}
+};
 
 export default SkillsSection;

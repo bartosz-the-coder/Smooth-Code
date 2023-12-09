@@ -7,7 +7,7 @@ li.skill_item > div.stars {
   color: var(--themePrimary);
 }
 
-.skill_name  {
+.skill_name {
   display: flex;
   gap: 0.5em;
 }

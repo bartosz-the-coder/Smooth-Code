@@ -13,7 +13,7 @@ export const experience = [
         { name: 'TypeScript', iconName: 'typescript' },
         { name: 'CSS', iconName: 'css' },
         { name: 'GIT', iconName: 'git' },
-        { name: 'Jenkins', iconName: 'jenkins' }
+        { name: 'Jenkins', iconName: 'jenkins' },
       ],
       description: 'Development of cryptocurrency trading apps in React',
     },

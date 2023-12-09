@@ -20,11 +20,11 @@ const Home: FC<HomeProps> = ({ skills, experience }) => {
       <ContactSection />
     </>
   );
-}
+};
 
-export default Home
+export default Home;
 
-export const getStaticProps: GetStaticProps = async function(context) {
+export const getStaticProps: GetStaticProps = async function (context) {
   const { skills, experience } = await import('data');
   return {
     props: {
@@ -32,4 +32,4 @@ export const getStaticProps: GetStaticProps = async function(context) {
       experience,
     },
   };
-}
+};

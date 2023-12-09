@@ -8,7 +8,6 @@ import { navLinkConfig } from './links';
 
 import styles from './styles.module.css';
 
-
 export const Navigation = memo(() => (
   <nav className={styles.navigation}>
     <div className={styles.logo}>
@@ -31,14 +30,14 @@ export const Navigation = memo(() => (
   </nav>
 ));
 
-Navigation.displayName = 'Navigation'
+Navigation.displayName = 'Navigation';
 
 type NavLinkProps = PropsWithChildren<{
   href: string;
 }>;
 
 const NavLink: FC<NavLinkProps> = ({ href, children }) => {
-  const { asPath } = useRouter(); 
+  const { asPath } = useRouter();
   const linkClassNames = clsx(styles.link, {
     [styles.active]: asPath === href,
   });

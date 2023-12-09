@@ -3,7 +3,7 @@ import { FC } from 'react';
 import ImageLoader from 'components/image';
 import { SectionContainer } from 'components/section-container';
 
-import Styles from './styles.module.css'
+import Styles from './styles.module.css';
 
 const LandingSection: FC = () => (
   <SectionContainer
@@ -13,9 +13,7 @@ const LandingSection: FC = () => (
     headingClassName={Styles.title}
   >
     <div>
-      <p className={Styles.subtitle}>
-        Software Engineer by day,&nbsp;&nbsp;
-      </p>
+      <p className={Styles.subtitle}>Software Engineer by day,&nbsp;&nbsp;</p>
       <p className={Styles.subtitle}>Software Engineer by night.</p>
     </div>
     <div className={Styles.logo}>
@@ -30,4 +28,4 @@ const LandingSection: FC = () => (
   </SectionContainer>
 );
 
-export default LandingSection
+export default LandingSection;

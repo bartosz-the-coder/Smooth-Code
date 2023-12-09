@@ -9,11 +9,11 @@
 
 .tech_item {
   display: flex;
- align-items: center;
- gap: 0.5em;
- border: 1px solid var(--neutralSecondary);
- border-radius: 0.25em;
- padding-inline: 1em;
- padding-block: 0.5em;
- background-color: var(--themePrimary);
+  align-items: center;
+  gap: 0.5em;
+  border: 1px solid var(--neutralSecondary);
+  border-radius: 0.25em;
+  padding-inline: 1em;
+  padding-block: 0.5em;
+  background-color: var(--themePrimary);
 }

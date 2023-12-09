@@ -1,6 +1,7 @@
 import { NextRouter, useRouter } from 'next/router';
 import { useEffect, useRef, useMemo } from 'react';
 import { debounce } from 'lodash';
+import { isSSR } from 'utils/isSSR';
 
 type EnchancedIntersectionObserver = IntersectionObserver & {
   paused?: boolean;
@@ -12,7 +13,7 @@ export function useScrollSpy() {
   routerRef.current = useRouter();
 
   const observer = useMemo<EnchancedIntersectionObserver | null>(() => {
-    if (typeof window === 'undefined' || !routerRef.current) {
+    if (isSSR || !routerRef.current) {
       return null;
     }
     return new IntersectionObserver(getObserverCallback(routerRef.current), {

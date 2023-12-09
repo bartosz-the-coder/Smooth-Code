@@ -2,8 +2,8 @@
   display: grid;
   height: 100dvh;
   grid-template-areas:
-    "header header"
-    "nav main";
+    'header header'
+    'nav main';
   grid-template-rows: 80px 1fr;
   grid-template-columns: min(25vw, 200px) 1fr;
 }
@@ -26,7 +26,7 @@
   background-color: var(--main-background);
   color: var(--text);
   overflow-y: auto;
-  scroll-behavior:  smooth;
+  scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
   scroll-padding-top: 1rem;
 }
@@ -34,10 +34,10 @@
 @media only screen and (max-width: 600px) {
   .container {
     grid-template-areas:
-      "header"
-      "nav"
-      "main";
-    grid-template-rows: 80px auto 1fr; 
+      'header'
+      'nav'
+      'main';
+    grid-template-rows: 80px auto 1fr;
     grid-template-columns: 1fr;
   }
 }

@@ -11,11 +11,11 @@
   width: var(--toggle-width);
   height: var(--toggle-height);
   flex: 1 0 var(--toggle-height);
-  
-  &:hover { 
-    color: var(--themeSecondary)
+
+  &:hover {
+    color: var(--themeSecondary);
   }
-  
+
   /* Hide default HTML checkbox */
   & input {
     opacity: 0;
