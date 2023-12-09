@@ -16,7 +16,7 @@ export function useClickOutside(
 
     const clickOutside: EventListener = (event) => {
       const element = boundryElementRef.current;
-      if (element && element.contains(event.target as HTMLElement)) {
+      if (element && !element.contains(event.target as HTMLElement)) {
         callback(element);
       }
     };

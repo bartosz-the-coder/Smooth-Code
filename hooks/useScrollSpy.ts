@@ -45,6 +45,7 @@ function getObserverCallback(router: NextRouter): IntersectionObserverCallback {
       .filter((e) => e.isIntersecting)
       .sort((one, other) => one.time - other.time);
 
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- false positive
     if (!visible) {
       return;
     }
