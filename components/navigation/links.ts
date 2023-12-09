@@ -22,8 +22,8 @@ export const navLinkConfig: Record<Path, NavLinkConfig> = {
     name: 'Skills',
     Icon: SkillsIcon,
   },
-  '/#experience': {
-    name: 'Experience',
+  '/#portfolio': {
+    name: 'Portfolio',
     Icon: AboutIcon,
   },
   '/#contact': {

@@ -4,18 +4,18 @@ import { SectionContainer } from 'components/section-container';
 import { Experience } from 'data/types';
 import { ExperienceRow } from './components/row';
 
-type ExperienceSectionProps = {
-  experience: Experience[];
+type PortfolioSectionProps = {
+  portfolio: Experience[];
 };
 
-const ExperienceSection: FC<ExperienceSectionProps> = ({ experience }) => {
+const PortfolioSection: FC<PortfolioSectionProps> = ({ portfolio }) => {
   return (
-    <SectionContainer id="experience" heading="My experience">
+    <SectionContainer id="portfolio" heading="My Portfolio">
       <List type="rectangle">
-        {Children.toArray(experience.map(ExperienceRow))}
+        {Children.toArray(portfolio.map(ExperienceRow))}
       </List>
     </SectionContainer>
   );
 };
 
-export default ExperienceSection;
+export default PortfolioSection;

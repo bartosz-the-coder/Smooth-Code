@@ -8,15 +8,15 @@ import SkillsSection from 'sections/skills';
 
 type HomeProps = {
   skills: Skill[];
-  experience: Experience[];
+  portfolio: Experience[];
 };
 
-const Home: FC<HomeProps> = ({ skills, experience }) => {
+const Home: FC<HomeProps> = ({ skills, portfolio }) => {
   return (
     <>
       <LandingSection />
       <SkillsSection skills={skills} />
-      <ExperienceSection experience={experience} />
+      <ExperienceSection portfolio={portfolio} />
       <ContactSection />
     </>
   );
@@ -25,11 +25,11 @@ const Home: FC<HomeProps> = ({ skills, experience }) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps = async function () {
-  const { skills, experience } = await import('data');
+  const { skills, portfolio } = await import('data');
   return {
     props: {
       skills,
-      experience,
+      portfolio,
     },
   };
 };

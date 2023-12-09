@@ -1,6 +1,7 @@
+import { Experience } from './types';
 import { getFormattedDate } from './utils';
 
-export const experience = [
+export const portfolio: Experience[] = [
   {
     title: 'Senior Frontend Developer',
     type: 'Contractor',

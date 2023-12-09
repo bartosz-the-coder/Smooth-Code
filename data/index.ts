@@ -1,2 +1,2 @@
-export * from './experience';
+export * from './portfolio';
 export * from './skills';
