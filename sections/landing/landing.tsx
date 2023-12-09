@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { FC } from 'react';
-import { ImageLoader } from 'components/image';
+import ImageLoader from 'components/image';
 import { SectionContainer } from 'components/section-container';
 
 import Styles from './styles.module.css'

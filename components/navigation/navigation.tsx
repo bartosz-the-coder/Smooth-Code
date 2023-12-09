@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { memo } from 'react';
+import { FC, PropsWithChildren, memo } from 'react';
 import clsx from 'clsx';
-import { ImageLoader } from 'components/image';
+import ImageLoader from 'components/image';
 import { navLinkConfig } from './links';
 
 import styles from './styles.module.css';
@@ -33,8 +33,11 @@ export const Navigation = memo(() => (
 
 Navigation.displayName = 'Navigation'
 
+type NavLinkProps = PropsWithChildren<{
+  href: string;
+}>;
 
-const NavLink = ({ href, children }) => {
+const NavLink: FC<NavLinkProps> = ({ href, children }) => {
   const { asPath } = useRouter(); 
   const linkClassNames = clsx(styles.link, {
     [styles.active]: asPath === href,

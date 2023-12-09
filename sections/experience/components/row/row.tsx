@@ -4,7 +4,7 @@ import { Experience } from 'data/types';
 import { JobDescription } from './components/JobDescription';
 import styles from './styles.module.css';
 
-type Props = Experience[number];
+type Props = Experience;
 
 export const ExperienceRow: FC<Props> = ({
   employer,

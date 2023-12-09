@@ -1,4 +1,6 @@
-export const skills = [
+import { Skill } from './types';
+
+export const skills: Skill[] = [
   {
     name: 'C#/.NET',
     level: 1.0,

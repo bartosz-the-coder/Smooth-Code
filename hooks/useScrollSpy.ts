@@ -3,29 +3,26 @@ import { useEffect, useRef, useMemo } from 'react';
 import { debounce } from 'lodash';
 
 type EnchancedIntersectionObserver = IntersectionObserver & {
-  paused?: boolean
-}
+  paused?: boolean;
+};
 
 export function useScrollSpy() {
   const containerRef = useRef<HTMLElement>(null);
   const routerRef = useRef<NextRouter>();
   routerRef.current = useRouter();
 
-  const observer = useMemo<EnchancedIntersectionObserver>(
-    () =>
-      typeof window === 'undefined'
-        ? null
-        : new IntersectionObserver(getObserverCallback(
-          routerRef.current
-        ), {
-          root: containerRef.current,
-          threshold: 0.25
-        }),
-    []
-  );
+  const observer = useMemo<EnchancedIntersectionObserver | null>(() => {
+    if (typeof window === 'undefined' || !routerRef.current) {
+      return null;
+    }
+    return new IntersectionObserver(getObserverCallback(routerRef.current), {
+      root: containerRef.current,
+      threshold: 0.25,
+    });
+  }, []);
 
   useEffect(() => {
-    if (!observer) {
+    if (!observer || !containerRef.current) {
       return;
     }
 
@@ -34,32 +31,28 @@ export function useScrollSpy() {
 
     return () => {
       observer.disconnect();
-    }
+    };
   }, [observer]);
 
   return containerRef;
 }
 
-function getObserverCallback(
-  router: NextRouter
-): IntersectionObserverCallback {
+function getObserverCallback(router: NextRouter): IntersectionObserverCallback {
   const push = debounce(router.push, 100, { trailing: true });
   return (entries) => {
     const [visible] = entries
       .filter((e) => e.isIntersecting)
-      .sort((one, other) => one.time - other.time)
+      .sort((one, other) => one.time - other.time);
 
     if (!visible) {
-      return
+      return;
     }
 
     const hash = `#${visible.target.id}`;
-    push({ hash })?.catch(
-      (err: Error) => {
-        if ('cancelled' in err && !err.cancelled) {
-          throw err;
-        }
+    push({ hash })?.catch((err: Error) => {
+      if ('cancelled' in err && !err.cancelled) {
+        throw err;
       }
-    );
+    });
   };
 }

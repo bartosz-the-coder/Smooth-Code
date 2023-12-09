@@ -5,7 +5,7 @@ import Styles from './styles.module.css';
 
 type Props = PropsWithChildren<{
   className?: string;
-  type?: 'rectangle' | 'square';
+  type: 'rectangle' | 'square';
 }>
 
 export const List: FC<Props> = ({ children, type, className }) => (

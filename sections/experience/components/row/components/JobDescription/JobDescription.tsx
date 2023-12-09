@@ -1,11 +1,17 @@
-import { useRef } from 'react';
+import { FC, useRef } from 'react';
+import { Tech } from 'data/types';
 import { useClickOutside } from 'hooks/useClickOutside';
 import { TechStack } from '../../../../../../components/TechStack'
 
 import styles from './styles.module.css';
 
-export const JobDescription = ({ description, techStack }) => {
-  const detailsRef = useRef(null);
+type Props = {
+  description: string;
+  techStack: Tech[];
+};
+
+export const JobDescription: FC<Props> = ({ description, techStack }) => {
+  const detailsRef = useRef<HTMLDetailsElement>(null);
 
   useClickOutside(onOutsideClick, detailsRef)
 
@@ -24,6 +30,6 @@ export const JobDescription = ({ description, techStack }) => {
   );
 };
 
-function onOutsideClick(detailsElement) {
+function onOutsideClick(detailsElement: HTMLElement): void {
   detailsElement.removeAttribute('open')
 }

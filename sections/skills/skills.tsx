@@ -2,10 +2,10 @@ import { Children, FC } from 'react';
 import { List } from 'components/list';
 import { SectionContainer } from 'components/section-container';
 import { SkillRow } from './components/row';
-import type { Skills } from 'data/types';
+import type { Skill } from 'data/types';
 
 type SkillsSectionProps = {
-  skills: Skills;
+  skills: Skill[];
 }
 
 const SkillsSection: FC<SkillsSectionProps> = ({ skills }) => {

@@ -5,7 +5,7 @@ import { Experience } from 'data/types';
 import { ExperienceRow } from './components/row';
 
 type ExperienceSectionProps = {
-  experience: Experience;
+  experience: Experience[];
 }
 
 const ExperienceSection: FC<ExperienceSectionProps> = ({ experience }) => {

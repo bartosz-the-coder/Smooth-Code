@@ -6,10 +6,10 @@ import {
   IconType,
 } from 'components/icon';
 import { getIconComponent } from 'components/icon/utils';
-import { Skills } from 'data/types';
+import { Skill } from 'data/types';
 import styles from './styles.module.css';
 
-type Props = Skills[number]
+type Props = Skill
 
 export const SkillRow: FC<Props> = ({ name, level, icon }) => {
   const TechIcon = getIconComponent(icon);
