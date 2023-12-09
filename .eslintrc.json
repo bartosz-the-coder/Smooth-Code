@@ -10,7 +10,7 @@
   "plugins": ["prettier", "@typescript-eslint"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": true
+    "project": "tsconfig.eslint.json"
   },
   "rules": {
     "prettier/prettier": "error",
