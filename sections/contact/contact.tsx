@@ -2,7 +2,6 @@ import {
   ChangeEventHandler,
   FC,
   FormEventHandler,
-  MouseEventHandler,
   useRef,
   useState,
 } from 'react';
@@ -19,7 +18,7 @@ const ContactSection: FC = () => {
 
   const onSubmit: FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
-    const nameField = event.currentTarget[NAME_FIELD_ID];
+    const nameField: unknown = event.currentTarget[NAME_FIELD_ID];
 
     if (!(nameField instanceof HTMLInputElement)) {
       return;
@@ -34,7 +33,7 @@ const ContactSection: FC = () => {
   };
 
   const onMessageChange: ChangeEventHandler<HTMLTextAreaElement> = (event) => {
-    setMessageLength(event.target.value?.length ?? 0);
+    setMessageLength(event.target.value.length ?? 0);
   };
 
   return (

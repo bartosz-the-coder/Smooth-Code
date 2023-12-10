@@ -2,7 +2,7 @@
 
 import { NextApiHandler } from 'next';
 
-const helloApi: NextApiHandler = (req, res) => {
+const helloApi: NextApiHandler = (_, res) => {
   res.status(200).json({ name: 'John Doe' });
 };
 
