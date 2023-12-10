@@ -33,7 +33,7 @@ const ContactSection: FC = () => {
   };
 
   const onMessageChange: ChangeEventHandler<HTMLTextAreaElement> = (event) => {
-    setMessageLength(event.target.value.length ?? 0);
+    setMessageLength(event.target.value.length);
   };
 
   return (

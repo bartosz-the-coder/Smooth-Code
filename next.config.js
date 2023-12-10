@@ -1,3 +1,4 @@
+// eslint-env node
 const { PHASE_DEVELOPMENT_SERVER } = require('next/constants');
 
 /**
@@ -11,6 +12,9 @@ module.exports = (phase) => {
    */
   const config = {
     trailingSlash: true,
+    eslint: {
+      dirs: ['.'],
+    },
   };
 
   if (phase === PHASE_DEVELOPMENT_SERVER) {
