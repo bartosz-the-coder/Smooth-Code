@@ -77,7 +77,7 @@ export const portfolio: Experience[] = [
     type: 'Full time employment',
     employer: 'EY GDS (CS) Poland',
     startDate: getFormattedDate(new Date(2017, 5, 1)),
-    endDate: getFormattedDate(new Date(2029, 8, 30)),
+    endDate: getFormattedDate(new Date(2019, 8, 30)),
     project: {
       technologies: [
         { name: 'React', iconName: 'react' },
