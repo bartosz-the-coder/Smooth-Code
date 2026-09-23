@@ -1,65 +1,47 @@
-import { useEffect, useSyncExternalStore } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { DarkModeIcon, LightModeIcon } from 'components/icon';
+
 import styles from './styles.module.css';
 
-const KEY = 'prefers-color-scheme';
-const LIGHT = 'light';
-const DARK = 'dark';
+const STORAGE_KEY = 'theme';
 
-type Theme = typeof LIGHT | typeof DARK;
+type Theme = 'light' | 'dark';
 
-const listeners = new Set<() => void>();
-
-const subscribe = (onStoreChange: () => void) => {
-  listeners.add(onStoreChange);
-  return () => {
-    listeners.delete(onStoreChange);
-  };
-};
-
-const detectPreferedTheme = (): Theme => {
-  const stored = window.localStorage.getItem(KEY);
-  if (stored === LIGHT || stored === DARK) {
-    return stored;
+const readTheme = (): Theme => {
+  const override = document.documentElement.style.colorScheme;
+  if (override === 'light' || override === 'dark') {
+    return override;
   }
-  return window.matchMedia(`(${KEY}: ${LIGHT})`).matches ? LIGHT : DARK;
+
+  return window.matchMedia('(prefers-color-scheme: dark)').matches
+    ? 'dark'
+    : 'light';
 };
 
-// The server has no way to know the visitor's preference, so it always renders
-// the light theme and `useSyncExternalStore` swaps in the real one after
-// hydration.
-const getServerTheme = (): Theme => LIGHT;
+export const ThemeSwitch: FC = () => {
+  const [theme, setTheme] = useState<Theme>();
 
-const storeTheme = (theme: Theme) => {
-  window.localStorage.setItem(KEY, theme);
-  listeners.forEach((onStoreChange) => {
-    onStoreChange();
-  });
-};
+  useEffect(() => setTheme(readTheme()), []);
 
-export const ThemeSwitch = () => {
-  const theme = useSyncExternalStore(
-    subscribe,
-    detectPreferedTheme,
-    getServerTheme
-  );
-
-  useEffect(() => {
-    document.body.dataset.theme = theme;
-  }, [theme]);
-
-  const isDarkTheme = theme === DARK;
-  const ThemeIcon = isDarkTheme ? LightModeIcon : DarkModeIcon;
-  const onThemeChange = () => {
-    storeTheme(isDarkTheme ? LIGHT : DARK);
+  const toggle = () => {
+    const next: Theme = theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.style.colorScheme = next;
+    localStorage.setItem(STORAGE_KEY, next);
+    setTheme(next);
   };
+
+  const isDark = theme === 'dark';
+  const Icon = isDark ? LightModeIcon : DarkModeIcon;
 
   return (
-    <div className={styles.container}>
-      <label className={styles.switch}>
-        <input type="checkbox" onChange={onThemeChange} checked={isDarkTheme} />
-        <ThemeIcon className={styles.icon} />
-      </label>
-    </div>
+    <button
+      type="button"
+      className={styles.toggle}
+      onClick={toggle}
+      aria-label={`Switch to ${isDark ? 'light' : 'dark'} theme`}
+      aria-pressed={isDark}
+    >
+      {theme ? <Icon aria-hidden /> : null}
+    </button>
   );
 };

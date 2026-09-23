@@ -1,3 +1,5 @@
+import type { techIcons } from './tech';
+
 export type { IconType } from 'react-icons';
 
-export type IconName = Lowercase<keyof typeof import('./tech')>;
+export type IconName = keyof typeof techIcons;

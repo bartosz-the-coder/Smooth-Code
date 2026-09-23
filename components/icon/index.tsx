@@ -1,18 +1,14 @@
-export { IconContext } from 'react-icons';
-
 export {
-  IoBriefcaseOutline as AboutIcon,
+  IoArrowForward as ArrowIcon,
+  IoBriefcaseOutline as PortfolioIcon,
+  IoConstructOutline as SkillsIcon,
   IoHomeOutline as HomeIcon,
+  IoLogoLinkedin as LinkedInIcon,
+  IoMailOutline as MailIcon,
+  IoMoonOutline as DarkModeIcon,
   IoPersonCircleOutline as ContactIcon,
   IoSunnyOutline as LightModeIcon,
-  IoMoonOutline as DarkModeIcon,
-  IoSchoolOutline as SchoolIcon,
-  IoSettingsOutline as SettingIcon,
-  IoReaderOutline as ReaderIcon,
-  IoStarHalfOutline as HalfStarIcon,
-  IoStarSharp as FullStarIcon,
-  IoStarOutline as EmptyStarIcon,
-  IoConstructOutline as SkillsIcon,
 } from 'react-icons/io5';
 
+export { techIcons } from './tech';
 export * from './types';
