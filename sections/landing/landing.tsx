@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { FC } from 'react';
-import ImageLoader from 'components/image';
 import { SectionContainer } from 'components/section-container';
 
 import Styles from './styles.module.css';
@@ -20,9 +19,8 @@ const LandingSection: FC = () => (
       <Image
         src="/assets/logo.png"
         alt="Smooth Code logo"
-        layout="fill"
-        objectFit="contain"
-        loader={ImageLoader}
+        fill
+        style={{ objectFit: 'contain' }}
       />
     </div>
   </SectionContainer>

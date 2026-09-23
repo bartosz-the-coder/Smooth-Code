@@ -11,7 +11,9 @@ type SkillsSectionProps = {
 const SkillsSection: FC<SkillsSectionProps> = ({ skills }) => {
   return (
     <SectionContainer id="skills" heading="My Skills">
-      <List type="square">{Children.toArray(skills.map(SkillRow))}</List>
+      <List type="square">
+        {Children.toArray(skills.map((skill) => <SkillRow {...skill} />))}
+      </List>
     </SectionContainer>
   );
 };

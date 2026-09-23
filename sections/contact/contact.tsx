@@ -1,7 +1,8 @@
 import {
   ChangeEventHandler,
   FC,
-  FormEventHandler,
+  ReactEventHandler,
+  SubmitEventHandler,
   useRef,
   useState,
 } from 'react';
@@ -16,7 +17,7 @@ const ContactSection: FC = () => {
   const [name, setName] = useState<string>();
   const [messageLength, setMessageLength] = useState<number>(0);
 
-  const onSubmit: FormEventHandler<HTMLFormElement> = (event) => {
+  const onSubmit: SubmitEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
     const nameField: unknown = event.currentTarget[NAME_FIELD_ID];
 
@@ -27,7 +28,7 @@ const ContactSection: FC = () => {
     setName(nameField.value);
   };
 
-  const onReset: FormEventHandler<HTMLFormElement> = () => {
+  const onReset: ReactEventHandler<HTMLFormElement> = () => {
     setName(undefined);
     setMessageLength(0);
   };

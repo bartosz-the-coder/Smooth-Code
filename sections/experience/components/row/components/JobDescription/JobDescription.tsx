@@ -7,11 +7,11 @@ import { TechStack } from '../../../../../../components/TechStack';
 import styles from './styles.module.css';
 
 type Props = {
-  className: string;
+  className?: string;
   description: string;
   techStack: Tech[];
   // workaround for missing :has selector support
-  onExpanded?(expanded: boolean): void;
+  onExpanded?: (expanded: boolean) => void;
 };
 
 export const JobDescription: FC<Props> = ({

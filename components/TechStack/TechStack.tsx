@@ -28,6 +28,7 @@ const TechItem: FC<TechProps> = ({ tech }) => {
   const TechIcon = getIconComponent(tech.iconName);
   return (
     <li className={styles.tech_item}>
+      {/* eslint-disable-next-line react-hooks/static-components -- getIconComponent picks an existing module-level component, it does not create one */}
       <TechIcon className={styles.icon} />
       {tech.name}
     </li>

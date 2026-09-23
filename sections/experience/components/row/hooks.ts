@@ -7,8 +7,8 @@ export function useHasSelectorFallback() {
   let useStateHook = useFakeState;
 
   try {
-    !!document.querySelector(':root:has(> *)');
-  } catch (e) {
+    document.querySelector(':root:has(> *)');
+  } catch {
     console.info('Use fallback for :has selector');
     useStateHook = useState;
   }

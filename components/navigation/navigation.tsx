@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FC, PropsWithChildren, memo } from 'react';
 import clsx from 'clsx';
-import ImageLoader from 'components/image';
 import { navLinkConfig } from './links';
 
 import styles from './styles.module.css';
@@ -14,9 +13,8 @@ export const Navigation = memo(() => (
       <Image
         src="/assets/logo.png"
         alt="Smooth Code logo"
-        layout="fill"
-        objectFit="contain"
-        loader={ImageLoader}
+        fill
+        style={{ objectFit: 'contain' }}
       />
     </div>
     <ul className={styles.list}>
@@ -32,21 +30,17 @@ export const Navigation = memo(() => (
 
 Navigation.displayName = 'Navigation';
 
-type NavLinkProps = PropsWithChildren<{
-  href: string;
-}>;
+type NavLinkProps = PropsWithChildren<{ href: string }>;
 
 const NavLink: FC<NavLinkProps> = ({ href, children }) => {
   const { asPath } = useRouter();
   const linkClassNames = clsx(styles.link, {
-    [styles.active]: asPath === href,
+    [`${styles.active}`]: asPath === href,
   });
 
   return (
     <li className={linkClassNames}>
-      <Link href={href}>
-        <a>{children}</a>
-      </Link>
+      <Link href={href}>{children}</Link>
     </li>
   );
 };

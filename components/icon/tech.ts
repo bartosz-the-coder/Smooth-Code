@@ -6,23 +6,30 @@ export {
   SiReact as React,
   SiDotnet as Dotnet,
   SiAndroid as Android,
-  SiCsharp as Csharp,
   SiTypescript as Typescript,
   SiJavascript as Javascript,
-  SiAngularuniversal as Angular,
+  SiAngular as Angular,
   SiSubversion as Svn,
   SiStyledcomponents as Styledcomponents,
-  SiCss3 as Css,
-  SiXaml as Xaml,
-  SiMicrosoftsqlserver as Tsql,
+  SiCss as Css,
   SiSqlite as Sqlite,
-  SiAzuredevops as Azuredevops,
   SiJenkins as Jenkins,
   SiHtml5 as Html5,
 } from 'react-icons/si';
 
+export { TbBrandCSharp as Csharp } from 'react-icons/tb';
+
+export {
+  VscCode as Xaml,
+  VscAzureDevops as Azuredevops,
+} from 'react-icons/vsc';
+
 export { ImGit as Git, ImNpm as Npm } from 'react-icons/im';
 
-export { DiDotnet as Aspnet, DiJava as Java } from 'react-icons/di';
+export {
+  DiDotnet as Aspnet,
+  DiJava as Java,
+  DiMsqlServer as Tsql,
+} from 'react-icons/di';
 
 export { MdOutlinePattern as Patterns } from 'react-icons/md';

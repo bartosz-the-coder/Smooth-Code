@@ -6,7 +6,7 @@ type RootElement = HTMLElement | Window | null;
 
 export function useClickOutside(
   callback: ClickCallback,
-  boundryElementRef: RefObject<HTMLElement>,
+  boundryElementRef: RefObject<HTMLElement | null>,
   root: RootElement = isSSR ? null : window
 ) {
   useEffect(() => {
@@ -21,9 +21,12 @@ export function useClickOutside(
       }
     };
 
-    root.addEventListener('click', clickOutside);
+    const abortController = new AbortController();
+    root.addEventListener('click', clickOutside, {
+      signal: abortController.signal,
+    });
     return () => {
-      root.removeEventListener('click', clickOutside);
+      abortController.abort();
     };
   }, [boundryElementRef, root, callback]);
 }

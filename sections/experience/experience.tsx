@@ -12,7 +12,9 @@ const PortfolioSection: FC<PortfolioSectionProps> = ({ portfolio }) => {
   return (
     <SectionContainer id="portfolio" heading="My Portfolio">
       <List type="rectangle">
-        {Children.toArray(portfolio.map(ExperienceRow))}
+        {Children.toArray(
+          portfolio.map((experience) => <ExperienceRow {...experience} />)
+        )}
       </List>
     </SectionContainer>
   );
