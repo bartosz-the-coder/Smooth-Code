@@ -13,6 +13,7 @@
   font-size: 1.125rem;
   cursor: pointer;
   transition:
+    var(--theme-animation),
     color var(--duration-fast) var(--ease-out),
     border-color var(--duration-fast) var(--ease-out);
 }

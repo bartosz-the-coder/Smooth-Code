@@ -22,12 +22,14 @@
 
 .highlight[data-direction='forward'] {
   transition:
+    var(--theme-animation),
     right var(--highlight-lead),
     left var(--highlight-trail);
 }
 
 .highlight[data-direction='back'] {
   transition:
+    var(--theme-animation),
     left var(--highlight-lead),
     right var(--highlight-trail);
 }
@@ -52,6 +54,7 @@
   text-decoration: none;
   text-transform: uppercase;
   transition:
+    var(--theme-animation),
     color var(--duration-fast) var(--ease-out),
     background-color var(--duration-fast) var(--ease-out);
 }

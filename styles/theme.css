@@ -96,4 +96,10 @@
   --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
   --duration-fast: 120ms;
   --duration-base: 220ms;
+  --duration-slow: 400ms;
+
+  --theme-animation:
+    background-color var(--duration-slow) var(--ease-out),
+    border-color var(--duration-slow) var(--ease-out),
+    color var(--duration-slow) var(--ease-out);
 }

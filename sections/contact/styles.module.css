@@ -23,6 +23,7 @@
   color: var(--text);
   text-decoration: none;
   transition:
+    var(--theme-animation),
     border-color var(--duration-fast) var(--ease-out),
     box-shadow var(--duration-fast) var(--ease-out);
 }
@@ -59,7 +60,9 @@
   grid-area: 1 / 3 / span 2 / auto;
   align-self: center;
   color: var(--text-muted);
-  transition: transform var(--duration-fast) var(--ease-out);
+  transition:
+    var(--theme-animation),
+    transform var(--duration-fast) var(--ease-out);
 }
 
 .channel:hover .channelArrow {
@@ -97,7 +100,9 @@
   color: var(--text);
   font-family: inherit;
   font-size: var(--text-base);
-  transition: border-color var(--duration-fast) var(--ease-out);
+  transition:
+    var(--theme-animation),
+    border-color var(--duration-fast) var(--ease-out);
 }
 
 .field textarea {
@@ -123,7 +128,9 @@
   font-size: var(--text-base);
   font-weight: 600;
   cursor: pointer;
-  transition: background-color var(--duration-fast) var(--ease-out);
+  transition:
+    var(--theme-animation),
+    background-color var(--duration-fast) var(--ease-out);
 }
 
 .submit {
