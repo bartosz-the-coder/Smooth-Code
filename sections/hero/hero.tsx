@@ -27,9 +27,13 @@ export const HeroSection: FC<HeroProps> = ({ role, yearsOfExperience }) => (
         </p>
         <h1>Bartosz Nowak</h1>
         <p className={styles.tagline}>
-          <span>Software Engineer by day,</span>
-          <span>
-            Software Engineer <em>by night</em>.
+          <span className={styles.line}>
+            <span className={styles.text}>Software Engineer by day,</span>
+          </span>
+          <span className={styles.line}>
+            <span className={styles.text}>
+              Software Engineer <em>by night</em>.
+            </span>
           </span>
         </p>
         <p className={styles.summary}>
