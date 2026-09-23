@@ -1,6 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
-const applyStoredTheme = `try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.style.colorScheme=t}}catch(e){}`;
+const applyTheme = `try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.dataset.theme=t}catch(e){}`;
 
 export default class SmoothDocument extends Document {
   render() {
@@ -38,7 +38,7 @@ export default class SmoothDocument extends Document {
           />
         </Head>
         <body>
-          <script dangerouslySetInnerHTML={{ __html: applyStoredTheme }} />
+          <script dangerouslySetInnerHTML={{ __html: applyTheme }} />
           <Main />
           <NextScript />
         </body>
