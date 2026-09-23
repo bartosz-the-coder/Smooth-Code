@@ -25,10 +25,7 @@ export function useActiveSection(
           }
         }
 
-        const current = ids.filter((id) => visible.has(id)).pop();
-        if (current) {
-          setActive(current);
-        }
+        setActive(ids.filter((id) => visible.has(id)).pop());
       },
       { rootMargin: '-20% 0px -70% 0px' }
     );
