@@ -1,53 +1,36 @@
-/* eslint-disable @next/next/no-page-custom-font */
-
 import { AppType } from 'next/app';
 import Head from 'next/head';
-import { Header } from 'components/header';
-import { IconContext } from 'components/icon';
-import { Navigation } from 'components/navigation';
-import { ThemeSwitch } from 'components/theme-switch';
-import { useScrollSpy } from 'hooks/useScrollSpy';
+import { SiteFooter } from 'components/footer';
+import { SiteHeader } from 'components/header';
 
 import styles from 'styles/App.module.css';
 import 'styles/globals.css';
 
-const SmoothApp: AppType = ({ Component, pageProps }) => {
-  const ref = useScrollSpy();
-  return (
-    <IconContext.Provider value={iconStyle}>
-      <div className={styles.container}>
-        <SmoothHead />
-        <Header>
-          <ThemeSwitch />
-        </Header>
-        <Navigation />
-        <main ref={ref}>
-          <Component {...pageProps} />
-        </main>
-      </div>
-    </IconContext.Provider>
-  );
-};
+const DESCRIPTION =
+  'Bartosz Nowak — software engineer specialising in React, TypeScript and .NET. Skills, work history and contact details.';
+
+const SmoothApp: AppType = ({ Component, pageProps }) => (
+  <div className={styles.app}>
+    <SmoothHead />
+    <SiteHeader />
+    <main className={styles.main}>
+      <Component {...pageProps} />
+    </main>
+    <SiteFooter />
+  </div>
+);
 
 const SmoothHead = () => (
   <Head>
-    <title>Smooth Code</title>
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest"></link>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Economica:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
+    <title>Smooth Code | Bartosz Nowak</title>
+    <meta name="description" content={DESCRIPTION} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content="Smooth Code | Bartosz Nowak" />
+    <meta property="og:description" content={DESCRIPTION} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/assets/logo.png" />
+    <meta name="twitter:card" content="summary" />
   </Head>
 );
-
-const iconStyle = {
-  style: {
-    verticalAlign: 'middle',
-  },
-};
 
 export default SmoothApp;

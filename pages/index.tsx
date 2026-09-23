@@ -1,35 +1,22 @@
-import { GetStaticProps } from 'next';
 import { FC } from 'react';
-import { Experience, Skill } from 'data/types';
-import ContactSection from 'sections/contact';
-import ExperienceSection from 'sections/experience';
-import LandingSection from 'sections/landing';
-import SkillsSection from 'sections/skills';
+import { careerStart, currentRole, portfolio } from 'data/portfolio';
+import { skills } from 'data/skills';
+import { yearsSince } from 'data/utils';
+import { ContactSection } from 'sections/contact';
+import { HeroSection } from 'sections/hero';
+import { PortfolioSection } from 'sections/portfolio';
+import { SkillsSection } from 'sections/skills';
 
-type HomeProps = {
-  skills: Skill[];
-  portfolio: Experience[];
-};
-
-const Home: FC<HomeProps> = ({ skills, portfolio }) => {
-  return (
-    <>
-      <LandingSection />
-      <SkillsSection skills={skills} />
-      <ExperienceSection portfolio={portfolio} />
-      <ContactSection />
-    </>
-  );
-};
+const Home: FC = () => (
+  <>
+    <HeroSection
+      role={currentRole}
+      yearsOfExperience={yearsSince(careerStart)}
+    />
+    <SkillsSection skills={skills} />
+    <PortfolioSection portfolio={portfolio} />
+    <ContactSection />
+  </>
+);
 
 export default Home;
-
-export const getStaticProps: GetStaticProps = async function () {
-  const { skills, portfolio } = await import('data');
-  return {
-    props: {
-      skills,
-      portfolio,
-    },
-  };
-};

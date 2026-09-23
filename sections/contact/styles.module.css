@@ -1,70 +1,170 @@
-.page_content {
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: var(--space-5);
+}
+
+.direct {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  font-size: 1.25rem;
+  gap: var(--space-3);
 }
 
-.form_container {
-  position: relative;
+.channel {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background-color: var(--surface-raised);
+  color: var(--text);
+  text-decoration: none;
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out);
 }
 
-.contact_form {
+.channel:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+  color: var(--text);
+}
+
+.channelIcon {
+  grid-row: 1 / span 2;
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+.channelLabel {
+  align-self: end;
+  color: var(--text-muted);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.channelValue {
+  align-self: start;
+  font-size: var(--text-lg);
+}
+
+.channelArrow {
+  grid-row: 1 / span 2;
+  color: var(--text-muted);
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.channel:hover .channelArrow {
+  color: var(--accent);
+  transform: translateX(2px);
+}
+
+.card {
   display: flex;
   flex-direction: column;
-  min-width: 300px;
-  max-width: 25vmin;
-  gap: 0.5em;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background-color: var(--surface-raised);
 }
 
-.contact_form > :where(input, textarea) {
-  height: 2rem;
-  padding-inline: 0.5em;
-  border: ridge 2px var(--neutralPrimary);
-  border-radius: 5px;
-  background-color: var(--input-background);
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
 }
 
-.contact_form > textarea {
-  min-height: 5rem;
+.fieldLabel {
+  color: var(--text-muted);
+  font-size: var(--text-sm);
 }
 
-.contact_form > :not(:placeholder-shown):invalid {
-  border-color: transparent;
-  outline: 2px solid var(--error);
+.field input,
+.field textarea {
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background-color: var(--surface-base);
+  color: var(--text);
+  font-family: inherit;
+  font-size: var(--text-base);
+  transition: border-color var(--duration-fast) var(--ease-out);
 }
 
-.contact_form_overlay {
-  position: absolute;
-  display: none;
-  inset: 0;
-  padding: 0.5em 2em;
-  transform: scale(1.1);
-  isolation: isolate;
-  color: var(--textInv);
-  text-align: center;
-  font-size: 1rem;
+.field textarea {
+  resize: vertical;
 }
 
-.contact_form_overlay::before {
-  position: absolute;
-  content: '';
-  background: var(--modal-background);
-  inset: 0;
-  opacity: 0.95;
-  z-index: -1;
+.field input:focus,
+.field textarea:focus {
+  border-color: var(--accent);
 }
 
-.contact_form_overlay[data-visible='true'] {
-  display: block;
+.field :is(input, textarea):not(:placeholder-shown):invalid {
+  border-color: var(--danger);
 }
 
-.contact_form_overlay > button {
-  margin-top: 1em;
+.submit,
+.secondaryButton {
+  align-self: start;
+  padding: var(--space-3) var(--space-5);
+  border: 1px solid transparent;
+  border-radius: var(--radius-full);
+  font-family: inherit;
+  font-size: var(--text-base);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-out);
 }
 
-.message_info {
-  margin: -0.5em 0.5em 0 0.5em;
-  font-size: 0.5em;
-  text-align: start;
+.submit {
+  background-color: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.submit:hover:enabled {
+  background-color: var(--accent-hover);
+}
+
+.submit:disabled {
+  cursor: progress;
+  opacity: 0.7;
+}
+
+.secondaryButton {
+  border-color: var(--border-strong);
+  background-color: transparent;
+  color: var(--text);
+}
+
+.secondaryButton:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.error {
+  color: var(--danger);
+  font-size: var(--text-sm);
+}
+
+.successTitle {
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+}
+
+.successBody {
+  color: var(--text-muted);
+}
+
+@media (width < 52rem) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
 }

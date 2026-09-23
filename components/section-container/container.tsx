@@ -1,24 +1,29 @@
-import { FC, PropsWithChildren } from 'react';
+import { FC, PropsWithChildren, ReactNode } from 'react';
 import clsx from 'clsx';
 
-import Styles from './styles.module.css';
+import styles from './styles.module.css';
 
 type SectionContainerProps = PropsWithChildren<{
   id: SectionId;
   heading: string;
+  kicker?: ReactNode;
   className?: string;
-  headingClassName?: string;
 }>;
 
 export const SectionContainer: FC<SectionContainerProps> = ({
   children,
   heading,
+  kicker,
   id,
   className,
-  headingClassName,
 }) => (
-  <section id={id} className={clsx(Styles.container, className)}>
-    <h2 className={headingClassName}>{heading}</h2>
-    {children}
+  <section id={id} className={clsx(styles.section, className)}>
+    <div className={styles.inner}>
+      <header className={styles.header}>
+        {kicker ? <p className={styles.kicker}>{kicker}</p> : null}
+        <h2>{heading}</h2>
+      </header>
+      {children}
+    </div>
   </section>
 );

@@ -1,11 +1,6 @@
 import type { IconName } from 'components/icon';
 
-type EmpoymentType = 'Contractor' | 'Full time employment';
-
-type Project = {
-  technologies: Tech[];
-  description: string;
-};
+type EmploymentType = 'Contractor' | 'Full time employment';
 
 export type Tech = {
   name: string;
@@ -14,18 +9,20 @@ export type Tech = {
 
 export type Experience = {
   title: string;
-  type: EmpoymentType;
+  type: EmploymentType;
   employer: string;
-  startDate: string;
-  endDate: string;
-  project: Project;
+  description: string;
+  technologies: Tech[];
+  startDate: Date;
+  endDate: Date | null;
 };
+
+export const SKILL_TIERS = ['Expert', 'Advanced', 'Familiar'] as const;
+
+export type SkillTier = (typeof SKILL_TIERS)[number];
 
 export type Skill = {
   name: string;
-  level: SkillLevel;
   icon: IconName;
+  tier: SkillTier;
 };
-
-type SkillLevel =
-  0.0 | 0.1 | 0.2 | 0.3 | 0.4 | 0.5 | 0.6 | 0.7 | 0.8 | 0.9 | 1.0;

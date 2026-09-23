@@ -1,103 +1,120 @@
-import {
-  ChangeEventHandler,
-  FC,
-  ReactEventHandler,
-  SubmitEventHandler,
-  useRef,
-  useState,
-} from 'react';
+import { FC, FormEventHandler, useState } from 'react';
+import { ArrowIcon, LinkedInIcon, MailIcon } from 'components/icon';
 import { SectionContainer } from 'components/section-container';
 
-import Styles from './styles.module.css';
+import styles from './styles.module.css';
 
-const NAME_FIELD_ID = 'content_name';
+const EMAIL = 'contact@smoothcode.pl';
+const LINKEDIN = 'https://www.linkedin.com/in/bartoszn/';
 
-const ContactSection: FC = () => {
-  const formRef = useRef<HTMLFormElement>(null);
-  const [name, setName] = useState<string>();
-  const [messageLength, setMessageLength] = useState<number>(0);
+const FORM_ENDPOINT = process.env.NEXT_PUBLIC_FORM_ENDPOINT;
 
-  const onSubmit: SubmitEventHandler<HTMLFormElement> = (event) => {
-    event.preventDefault();
-    const nameField: unknown = event.currentTarget[NAME_FIELD_ID];
+type Status = 'idle' | 'submitting' | 'success' | 'error';
 
-    if (!(nameField instanceof HTMLInputElement)) {
-      return;
-    }
-
-    setName(nameField.value);
-  };
-
-  const onReset: ReactEventHandler<HTMLFormElement> = () => {
-    setName(undefined);
-    setMessageLength(0);
-  };
-
-  const onMessageChange: ChangeEventHandler<HTMLTextAreaElement> = (event) => {
-    setMessageLength(event.target.value.length);
-  };
-
-  return (
-    <SectionContainer id="contact" heading="Contact">
-      <div className={Styles.page_content}>
-        <p>Let&apos;s stay in touch!</p>
-        <p>
-          You can contact me via email{' '}
-          <a
-            className={Styles.contact_link}
-            href="mailto:contact@smoothcode.pl"
-          >
-            contact@smoothcode.pl
-          </a>
-        </p>
-        <strong>OR</strong>
-        <p>
-          Visit my LinkedIn profile{' '}
-          <a
-            className={Styles.contact_link}
-            href="https://www.linkedin.com/in/bartoszn/"
-          >
-            LinkedIn profile
-          </a>
-        </p>
-        <strong>OR</strong>
-        <p>Fill that contact form</p>
-        <section className={Styles.form_container}>
-          <form
-            ref={formRef}
-            className={Styles.contact_form}
-            onSubmit={onSubmit}
-            onReset={onReset}
-          >
-            <input
-              id={NAME_FIELD_ID}
-              type="text"
-              placeholder="Your name"
-              required
-            />
-            <input type="email" placeholder="Your email" required />
-            <textarea
-              id="message"
-              placeholder="Your message"
-              required
-              minLength={50}
-              onChange={onMessageChange}
-            />
-            <small className={Styles.message_info}>
-              At least 50 characters (currently: {messageLength} )
-            </small>
-            <button type="submit">Send</button>
-            <div className={Styles.contact_form_overlay} data-visible={!!name}>
-              <h3>Thanks for your time {name}</h3>
-              Unfortunately the contact form is out of order, <br />
-              please try to use other ways of communication.
-              <button type="reset">Dismiss</button>
-            </div>
-          </form>
-        </section>
+export const ContactSection: FC = () => (
+  <SectionContainer id="contact" heading="Contact" kicker="Let's stay in touch">
+    <div className={styles.layout}>
+      <div className={styles.direct}>
+        <a className={styles.channel} href={`mailto:${EMAIL}`}>
+          <MailIcon className={styles.channelIcon} aria-hidden />
+          <span className={styles.channelLabel}>Email</span>
+          <span className={styles.channelValue}>{EMAIL}</span>
+          <ArrowIcon className={styles.channelArrow} aria-hidden />
+        </a>
+        <a
+          className={styles.channel}
+          href={LINKEDIN}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <LinkedInIcon className={styles.channelIcon} aria-hidden />
+          <span className={styles.channelLabel}>LinkedIn</span>
+          <span className={styles.channelValue}>in/bartoszn</span>
+          <ArrowIcon className={styles.channelArrow} aria-hidden />
+        </a>
       </div>
-    </SectionContainer>
-  );
+      {FORM_ENDPOINT ? <ContactForm endpoint={FORM_ENDPOINT} /> : null}
+    </div>
+  </SectionContainer>
+);
+
+type ContactFormProps = {
+  endpoint: string;
 };
 
-export default ContactSection;
+const ContactForm: FC<ContactFormProps> = ({ endpoint }) => {
+  const [status, setStatus] = useState<Status>('idle');
+
+  const onSubmit: FormEventHandler<HTMLFormElement> = (event) => {
+    event.preventDefault();
+    void send(event.currentTarget);
+  };
+
+  const send = async (form: HTMLFormElement) => {
+    setStatus('submitting');
+
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(form),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Form endpoint responded with ${response.status}`);
+      }
+
+      form.reset();
+      setStatus('success');
+    } catch {
+      setStatus('error');
+    }
+  };
+
+  if (status === 'success') {
+    return (
+      <div className={styles.card}>
+        <p className={styles.successTitle}>Message sent</p>
+        <p className={styles.successBody}>
+          Thanks for reaching out — I&apos;ll get back to you soon.
+        </p>
+        <button
+          type="button"
+          className={styles.secondaryButton}
+          onClick={() => setStatus('idle')}
+        >
+          Send another
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <form className={styles.card} onSubmit={onSubmit}>
+      <label className={styles.field}>
+        <span className={styles.fieldLabel}>Name</span>
+        <input name="name" type="text" autoComplete="name" required />
+      </label>
+      <label className={styles.field}>
+        <span className={styles.fieldLabel}>Email</span>
+        <input name="email" type="email" autoComplete="email" required />
+      </label>
+      <label className={styles.field}>
+        <span className={styles.fieldLabel}>Message</span>
+        <textarea name="message" rows={4} minLength={20} required />
+      </label>
+      {status === 'error' ? (
+        <p className={styles.error} role="alert">
+          Something went wrong. Please email me at {EMAIL} instead.
+        </p>
+      ) : null}
+      <button
+        type="submit"
+        className={styles.submit}
+        disabled={status === 'submitting'}
+      >
+        {status === 'submitting' ? 'Sending…' : 'Send message'}
+      </button>
+    </form>
+  );
+};

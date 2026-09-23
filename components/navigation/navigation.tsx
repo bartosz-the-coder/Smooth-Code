@@ -1,46 +1,29 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { FC, PropsWithChildren, memo } from 'react';
+import { FC } from 'react';
 import clsx from 'clsx';
-import { navLinkConfig } from './links';
+import { useActiveSection } from 'hooks/useActiveSection';
+import { navLinks, navSectionIds } from './links';
 
 import styles from './styles.module.css';
 
-export const Navigation = memo(() => (
-  <nav className={styles.navigation}>
-    <div className={styles.logo}>
-      <Image
-        src="/assets/logo.png"
-        alt="Smooth Code logo"
-        fill
-        style={{ objectFit: 'contain' }}
-      />
-    </div>
-    <ul className={styles.list}>
-      {Object.entries(navLinkConfig).map(([route, { Icon, name }]) => (
-        <NavLink key={name} href={route} aria-label={name}>
-          <Icon />
-          <label className={styles.label}>{name}</label>
-        </NavLink>
-      ))}
-    </ul>
-  </nav>
-));
-
-Navigation.displayName = 'Navigation';
-
-type NavLinkProps = PropsWithChildren<{ href: string }>;
-
-const NavLink: FC<NavLinkProps> = ({ href, children }) => {
-  const { asPath } = useRouter();
-  const linkClassNames = clsx(styles.link, {
-    [`${styles.active}`]: asPath === href,
-  });
+export const Navigation: FC = () => {
+  const active = useActiveSection(navSectionIds);
 
   return (
-    <li className={linkClassNames}>
-      <Link href={href}>{children}</Link>
-    </li>
+    <nav className={styles.navigation} aria-label="Sections">
+      <ul className={styles.list}>
+        {navLinks.map(({ id, name, Icon }) => (
+          <li key={id}>
+            <a
+              className={clsx(styles.link, id === active && styles.active)}
+              href={`#${id}`}
+              aria-current={id === active ? 'true' : undefined}
+            >
+              <Icon className={styles.icon} aria-hidden />
+              <span className={styles.label}>{name}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 };

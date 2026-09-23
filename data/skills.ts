@@ -1,64 +1,18 @@
 import { Skill } from './types';
 
 export const skills: Skill[] = [
-  {
-    name: 'C#/.NET',
-    level: 1.0,
-    icon: 'csharp',
-  },
-  {
-    name: 'TypeScript',
-    level: 0.9,
-    icon: 'typescript',
-  },
-  {
-    name: 'JavaScript',
-    level: 0.8,
-    icon: 'javascript',
-  },
-  {
-    name: 'ASP.NET',
-    level: 0.6,
-    icon: 'aspnet',
-  },
-  {
-    name: 'Angular',
-    level: 0.5,
-    icon: 'angular',
-  },
-  {
-    name: 'React',
-    level: 1.0,
-    icon: 'react',
-  },
-  {
-    name: 'CSS 3',
-    level: 0.8,
-    icon: 'css',
-  },
-  {
-    name: 'HTML5',
-    level: 0.8,
-    icon: 'html5',
-  },
-  {
-    name: 'GIT',
-    level: 0.7,
-    icon: 'git',
-  },
-  {
-    name: 'NPM / Yarn',
-    level: 0.8,
-    icon: 'npm',
-  },
-  {
-    name: 'SQL',
-    level: 0.5,
-    icon: 'tsql',
-  },
-  {
-    name: 'Patterns',
-    level: 0.9,
-    icon: 'patterns',
-  },
+  { name: 'React', icon: 'react', tier: 'Expert' },
+  { name: 'TypeScript', icon: 'typescript', tier: 'Expert' },
+  { name: 'C# / .NET', icon: 'csharp', tier: 'Expert' },
+  { name: 'Design patterns', icon: 'patterns', tier: 'Expert' },
+
+  { name: 'JavaScript', icon: 'javascript', tier: 'Advanced' },
+  { name: 'CSS 3', icon: 'css', tier: 'Advanced' },
+  { name: 'HTML 5', icon: 'html5', tier: 'Advanced' },
+  { name: 'NPM / Yarn', icon: 'npm', tier: 'Advanced' },
+  { name: 'Git', icon: 'git', tier: 'Advanced' },
+
+  { name: 'ASP.NET', icon: 'aspnet', tier: 'Familiar' },
+  { name: 'Angular', icon: 'angular', tier: 'Familiar' },
+  { name: 'SQL', icon: 'tsql', tier: 'Familiar' },
 ];

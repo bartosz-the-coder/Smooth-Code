@@ -1,35 +1,43 @@
-/***
- * TECH ICONS
- */
-
-export {
-  SiReact as React,
-  SiDotnet as Dotnet,
-  SiAndroid as Android,
-  SiTypescript as Typescript,
-  SiJavascript as Javascript,
-  SiAngular as Angular,
-  SiSubversion as Svn,
-  SiStyledcomponents as Styledcomponents,
-  SiCss as Css,
-  SiSqlite as Sqlite,
-  SiJenkins as Jenkins,
-  SiHtml5 as Html5,
+import { DiDotnet, DiJava, DiMsqlServer } from 'react-icons/di';
+import { ImGit, ImNpm } from 'react-icons/im';
+import { MdOutlinePattern } from 'react-icons/md';
+import {
+  SiAndroid,
+  SiAngular,
+  SiCss,
+  SiDotnet,
+  SiHtml5,
+  SiJavascript,
+  SiJenkins,
+  SiReact,
+  SiSqlite,
+  SiStyledcomponents,
+  SiSubversion,
+  SiTypescript,
 } from 'react-icons/si';
+import { TbBrandCSharp } from 'react-icons/tb';
+import { VscAzureDevops, VscCode } from 'react-icons/vsc';
 
-export { TbBrandCSharp as Csharp } from 'react-icons/tb';
-
-export {
-  VscCode as Xaml,
-  VscAzureDevops as Azuredevops,
-} from 'react-icons/vsc';
-
-export { ImGit as Git, ImNpm as Npm } from 'react-icons/im';
-
-export {
-  DiDotnet as Aspnet,
-  DiJava as Java,
-  DiMsqlServer as Tsql,
-} from 'react-icons/di';
-
-export { MdOutlinePattern as Patterns } from 'react-icons/md';
+export const techIcons = {
+  android: SiAndroid,
+  angular: SiAngular,
+  aspnet: DiDotnet,
+  azuredevops: VscAzureDevops,
+  csharp: TbBrandCSharp,
+  css: SiCss,
+  dotnet: SiDotnet,
+  git: ImGit,
+  html5: SiHtml5,
+  java: DiJava,
+  javascript: SiJavascript,
+  jenkins: SiJenkins,
+  npm: ImNpm,
+  patterns: MdOutlinePattern,
+  react: SiReact,
+  sqlite: SiSqlite,
+  styledcomponents: SiStyledcomponents,
+  svn: SiSubversion,
+  tsql: DiMsqlServer,
+  typescript: SiTypescript,
+  xaml: VscCode,
+};
