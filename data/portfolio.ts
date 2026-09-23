@@ -1,6 +1,6 @@
 import { Experience } from './types';
 
-export const portfolio: Experience[] = [
+export const portfolio: [Experience, ...Experience[]] = [
   {
     title: 'Senior Frontend Developer',
     type: 'Contractor',
@@ -114,6 +114,9 @@ export const portfolio: Experience[] = [
   },
 ];
 
-export const currentRole = portfolio[0];
+export const [currentRole] = portfolio;
 
-export const careerStart = portfolio[portfolio.length - 1].startDate;
+export const careerStart = portfolio.reduce(
+  (earliest, role) => (role.startDate < earliest ? role.startDate : earliest),
+  currentRole.startDate
+);
