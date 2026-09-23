@@ -76,6 +76,7 @@
   font-weight: 600;
   text-decoration: none;
   transition:
+    var(--theme-animation),
     background-color var(--duration-fast) var(--ease-out),
     border-color var(--duration-fast) var(--ease-out),
     transform var(--duration-fast) var(--ease-out);
