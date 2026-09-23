@@ -1,34 +1,57 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Smooth Code
 
-## Getting Started
+Personal site for Bartosz Nowak — a single page with a hero, skills, career
+timeline and contact section. Built with Next.js and CSS Modules, deployed as a
+static export.
 
-First, run the development server:
+## Getting started
 
 ```bash
-npm run dev
-# or
+yarn install
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The site runs at [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+| Script       | Purpose                                         |
+| ------------ | ----------------------------------------------- |
+| `yarn dev`   | Development server                              |
+| `yarn build` | Production build plus static export to `out/`   |
+| `yarn lint`  | ESLint and Prettier, warnings treated as errors |
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Contact form
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+The form posts directly to whatever endpoint `NEXT_PUBLIC_FORM_ENDPOINT` points
+at — any service that accepts a cross-origin `POST` works (Formspree, Basin,
+Netlify Forms). Copy `.env.example` to `.env.local` and fill it in:
 
-## Learn More
+```bash
+NEXT_PUBLIC_FORM_ENDPOINT=https://formspree.io/f/<your-form-id>
+```
 
-To learn more about Next.js, take a look at the following resources:
+With the variable unset the form is not rendered at all, leaving just the email
+and LinkedIn links, so the page never shows a control that silently discards
+messages.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Theming
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Colours live in two files and nothing else needs to know about themes:
 
-## Deploy on Vercel
+- `styles/palette.css` — raw colour primitives.
+- `styles/theme.css` — semantic tokens (`--surface-raised`, `--text-muted`,
+  `--accent`, …), each declared once with `light-dark()`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Because the tokens resolve from `color-scheme`, the OS preference is honoured on
+the first paint with no JavaScript. The header toggle only sets `color-scheme` on
+the root element and stores the choice in `localStorage`; a small inline script
+in `pages/_document.tsx` re-applies it before paint.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Content
+
+All copy that changes over time lives in `data/`:
+
+- `data/portfolio.ts` — roles, newest first. `endDate: null` marks the current one.
+- `data/skills.ts` — skills grouped by `tier` (`Expert`, `Advanced`, `Familiar`).
+
+Technology icons are keyed by name in `components/icon/tech.ts`, so referencing
+an icon that does not exist is a type error.

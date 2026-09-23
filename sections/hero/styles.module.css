@@ -18,9 +18,13 @@
 }
 
 .logo {
-  grid-column: 2;
+  grid-area: 1 / 2;
   width: min(280px, 30vw);
   height: auto;
+}
+
+.copy {
+  grid-area: 1 / 1;
 }
 
 .copy > * {
@@ -138,9 +142,12 @@
   }
 
   .logo {
-    grid-column: 1;
-    grid-row: 1;
+    grid-area: 1 / 1;
     width: min(140px, 34vw);
+  }
+
+  .copy {
+    grid-area: 2 / 1;
   }
 }
 
