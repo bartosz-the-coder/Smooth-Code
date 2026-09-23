@@ -1,16 +1,18 @@
 .dot {
+  --dot-lightness: 65%;
+  --dot-chroma: 0.23;
+
   position: relative;
   isolation: isolate;
   flex-shrink: 0;
   width: 0.6rem;
   height: 0.6rem;
   border-radius: var(--radius-full);
-  background: conic-gradient(
-    from 0turn,
-    var(--success),
-    var(--accent),
-    var(--highlight),
-    var(--success)
+  background-color: oklch(var(--dot-lightness) var(--dot-chroma) 150);
+  background-image: conic-gradient(
+    in oklch longer hue,
+    oklch(var(--dot-lightness) var(--dot-chroma) 0),
+    oklch(var(--dot-lightness) var(--dot-chroma) 0)
   );
   animation: sweep 6s linear infinite;
 }
