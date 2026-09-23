@@ -16,6 +16,7 @@ export const SkillRow: FC<Props> = ({ name, level, icon }) => {
   return (
     <li className={styles.skill_item}>
       <div className={styles.skill_name}>
+        {/* eslint-disable-next-line react-hooks/static-components -- getIconComponent picks an existing module-level component, it does not create one */}
         <TechIcon />
         {name}
       </div>

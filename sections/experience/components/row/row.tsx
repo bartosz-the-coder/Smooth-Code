@@ -20,8 +20,8 @@ export const ExperienceRow: FC<Props> = ({
   return (
     <li
       className={clsx({
-        [styles.root]: true,
-        [styles.expanded]: expanded,
+        [`${styles.root}`]: true,
+        [`${styles.expanded}`]: expanded,
       })}
     >
       <article className={styles.experience_item}>

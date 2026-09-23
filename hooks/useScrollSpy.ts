@@ -1,60 +1,61 @@
 import { NextRouter, useRouter } from 'next/router';
-import { useEffect, useRef, useMemo } from 'react';
-import { debounce } from 'lodash';
-import { isSSR } from 'utils/isSSR';
-
-type EnchancedIntersectionObserver = IntersectionObserver & {
-  paused?: boolean;
-};
+import { useEffect, useRef } from 'react';
+import { debounce } from 'utils/debounce';
 
 export function useScrollSpy() {
   const containerRef = useRef<HTMLElement>(null);
-  const routerRef = useRef<NextRouter>();
-  routerRef.current = useRouter();
-
-  const observer = useMemo<EnchancedIntersectionObserver | null>(() => {
-    if (isSSR || !routerRef.current) {
-      return null;
-    }
-    return new IntersectionObserver(getObserverCallback(routerRef.current), {
-      root: containerRef.current,
-      threshold: 0.25,
-    });
-  }, []);
+  const router = useRouter();
+  const routerRef = useRef(router);
 
   useEffect(() => {
-    if (!observer || !containerRef.current) {
+    routerRef.current = router;
+  }, [router]);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) {
       return;
     }
 
-    const container = containerRef.current;
+    const push = getDebouncedPush(routerRef.current);
+
+    const observer = new IntersectionObserver(getObserverCallback(push), {
+      root: container,
+      threshold: 0.25,
+    });
+
     Array.from(container.children).forEach((el) => observer.observe(el));
 
     return () => {
       observer.disconnect();
     };
-  }, [observer]);
+  }, []);
 
   return containerRef;
 }
 
-function getObserverCallback(router: NextRouter): IntersectionObserverCallback {
-  const push = debounce(router.push, 100, { trailing: true });
+function getDebouncedPush(router: NextRouter) {
+  return debounce((hash: string) => {
+    router.push({ hash }).catch((err: unknown) => {
+      if (err instanceof Error && 'cancelled' in err && !err.cancelled) {
+        throw err;
+      }
+    });
+  }, 100);
+}
+
+function getObserverCallback(
+  push: (hash: string) => void
+): IntersectionObserverCallback {
   return (entries) => {
     const [visible] = entries
       .filter((e) => e.isIntersecting)
       .sort((one, other) => one.time - other.time);
 
-    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- false positive
     if (!visible) {
       return;
     }
 
-    const hash = `#${visible.target.id}`;
-    push({ hash })?.catch((err: Error) => {
-      if ('cancelled' in err && !err.cancelled) {
-        throw err;
-      }
-    });
+    push(`#${visible.target.id}`);
   };
 }
