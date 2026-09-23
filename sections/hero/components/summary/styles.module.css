@@ -1,0 +1,14 @@
+.summary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 54ch;
+  margin-block-start: var(--space-5);
+  color: var(--text-muted);
+  font-size: var(--text-base);
+}
+
+.lead {
+  color: var(--text);
+  font-size: var(--text-lg);
+}

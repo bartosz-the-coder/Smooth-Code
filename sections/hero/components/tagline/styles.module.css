@@ -1,0 +1,89 @@
+.tagline {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-block-start: var(--space-3);
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-style: italic;
+  line-height: 1.25;
+}
+
+.tagline em {
+  border-block-end: 2px solid var(--highlight);
+  font-style: inherit;
+}
+
+.line {
+  position: relative;
+  white-space: nowrap;
+}
+
+.line:first-of-type {
+  --type-duration: 2000ms;
+  --type-delay: 200ms;
+  --type-steps: 25;
+  --caret-blinks: 2;
+}
+
+.line:last-of-type {
+  --type-duration: 2100ms;
+  --type-delay: 2200ms;
+  --type-steps: 27;
+  --caret-blinks: 6;
+}
+
+.text {
+  display: inline-block;
+  animation: type var(--type-duration) steps(var(--type-steps))
+    var(--type-delay) both;
+}
+
+.line::after {
+  content: '';
+  position: absolute;
+  top: 0.12em;
+  bottom: 0.12em;
+  left: 0;
+  width: 0.07em;
+  background-color: var(--highlight);
+  animation-name: caret-track, caret-blink;
+  animation-duration: var(--type-duration), 500ms;
+  animation-timing-function: steps(var(--type-steps)), linear;
+  animation-delay: var(--type-delay), var(--type-delay);
+  animation-iteration-count: 1, var(--caret-blinks);
+  animation-fill-mode: both;
+}
+
+@keyframes type {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes caret-track {
+  from {
+    left: 0;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes caret-blink {
+  from {
+    opacity: 0;
+  }
+  1%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  to {
+    opacity: 0;
+  }
+}
