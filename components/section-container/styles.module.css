@@ -6,6 +6,10 @@
   background-color: var(--surface-sunken);
 }
 
+.section:last-child {
+  min-height: 75dvh;
+}
+
 .inner {
   max-width: var(--content-width);
   margin-inline: auto;
