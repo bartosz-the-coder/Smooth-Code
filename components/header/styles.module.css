@@ -3,7 +3,7 @@
   top: 0;
   z-index: 10;
   border-bottom: 1px solid var(--border);
-  background-color: color-mix(in srgb, var(--surface-base) 85%, transparent);
+  background-color: color-mix(in srgb, var(--surface-base) 92%, transparent);
   backdrop-filter: blur(10px);
 }
 

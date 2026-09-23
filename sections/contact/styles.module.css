@@ -34,12 +34,14 @@
 }
 
 .channelIcon {
-  grid-row: 1 / span 2;
+  grid-area: 1 / 1 / span 2 / auto;
+  align-self: center;
   font-size: 1.5rem;
   color: var(--accent);
 }
 
 .channelLabel {
+  grid-area: 1 / 2;
   align-self: end;
   color: var(--text-muted);
   font-size: var(--text-xs);
@@ -48,12 +50,14 @@
 }
 
 .channelValue {
+  grid-area: 2 / 2;
   align-self: start;
   font-size: var(--text-lg);
 }
 
 .channelArrow {
-  grid-row: 1 / span 2;
+  grid-area: 1 / 3 / span 2 / auto;
+  align-self: center;
   color: var(--text-muted);
   transition: transform var(--duration-fast) var(--ease-out);
 }
@@ -105,7 +109,7 @@
   border-color: var(--accent);
 }
 
-.field :is(input, textarea):not(:placeholder-shown):invalid {
+.field :is(input, textarea):user-invalid {
   border-color: var(--danger);
 }
 
