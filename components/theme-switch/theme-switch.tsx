@@ -1,33 +1,47 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useSyncExternalStore } from 'react';
 import { DarkModeIcon, LightModeIcon } from 'components/icon';
 
 import styles from './styles.module.css';
 
 const STORAGE_KEY = 'theme';
+const DARK_QUERY = '(prefers-color-scheme: dark)';
 
 type Theme = 'light' | 'dark';
 
-const readTheme = (): Theme => {
-  const override = document.documentElement.style.colorScheme;
-  if (override === 'light' || override === 'dark') {
-    return override;
-  }
+const listeners = new Set<() => void>();
 
-  return window.matchMedia('(prefers-color-scheme: dark)').matches
-    ? 'dark'
-    : 'light';
+const subscribe = (onStoreChange: () => void) => {
+  const media = window.matchMedia(DARK_QUERY);
+  listeners.add(onStoreChange);
+  media.addEventListener('change', onStoreChange);
+
+  return () => {
+    listeners.delete(onStoreChange);
+    media.removeEventListener('change', onStoreChange);
+  };
 };
 
-export const ThemeSwitch: FC = () => {
-  const [theme, setTheme] = useState<Theme>();
+const getSnapshot = (): Theme => {
+  const applied = document.documentElement.dataset.theme;
+  if (applied === 'light' || applied === 'dark') {
+    return applied;
+  }
 
-  useEffect(() => setTheme(readTheme()), []);
+  return window.matchMedia(DARK_QUERY).matches ? 'dark' : 'light';
+};
+
+const getServerSnapshot = (): Theme | undefined => undefined;
+
+export const ThemeSwitch: FC = () => {
+  const theme = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   const toggle = () => {
     const next: Theme = theme === 'dark' ? 'light' : 'dark';
-    document.documentElement.style.colorScheme = next;
+    document.documentElement.dataset.theme = next;
     localStorage.setItem(STORAGE_KEY, next);
-    setTheme(next);
+    listeners.forEach((onStoreChange) => {
+      onStoreChange();
+    });
   };
 
   const isDark = theme === 'dark';

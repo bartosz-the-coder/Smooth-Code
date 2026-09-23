@@ -1,4 +1,4 @@
-import { FC, FormEventHandler, useState } from 'react';
+import { FC, useState } from 'react';
 import { ArrowIcon, LinkedInIcon, MailIcon } from 'components/icon';
 import { SectionContainer } from 'components/section-container';
 
@@ -45,11 +45,6 @@ type ContactFormProps = {
 const ContactForm: FC<ContactFormProps> = ({ endpoint }) => {
   const [status, setStatus] = useState<Status>('idle');
 
-  const onSubmit: FormEventHandler<HTMLFormElement> = (event) => {
-    event.preventDefault();
-    void send(event.currentTarget);
-  };
-
   const send = async (form: HTMLFormElement) => {
     setStatus('submitting');
 
@@ -61,7 +56,9 @@ const ContactForm: FC<ContactFormProps> = ({ endpoint }) => {
       });
 
       if (!response.ok) {
-        throw new Error(`Form endpoint responded with ${response.status}`);
+        throw new Error(
+          `Form endpoint responded with ${String(response.status)}`
+        );
       }
 
       form.reset();
@@ -90,7 +87,13 @@ const ContactForm: FC<ContactFormProps> = ({ endpoint }) => {
   }
 
   return (
-    <form className={styles.card} onSubmit={onSubmit}>
+    <form
+      className={styles.card}
+      onSubmit={(event) => {
+        event.preventDefault();
+        void send(event.currentTarget);
+      }}
+    >
       <label className={styles.field}>
         <span className={styles.fieldLabel}>Name</span>
         <input name="name" type="text" autoComplete="name" required />

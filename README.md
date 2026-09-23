@@ -1,8 +1,7 @@
 # Smooth Code
 
 Personal site for Bartosz Nowak — a single page with a hero, skills, career
-timeline and contact section. Built with Next.js and CSS Modules, deployed as a
-static export.
+timeline and contact section. Built with Next.js and CSS Modules.
 
 ## Getting started
 
@@ -16,7 +15,7 @@ The site runs at [http://localhost:3000](http://localhost:3000).
 | Script       | Purpose                                         |
 | ------------ | ----------------------------------------------- |
 | `yarn dev`   | Development server                              |
-| `yarn build` | Production build plus static export to `out/`   |
+| `yarn build` | Production build                                |
 | `yarn lint`  | ESLint and Prettier, warnings treated as errors |
 
 ## Contact form
@@ -39,12 +38,13 @@ Colours live in two files and nothing else needs to know about themes:
 
 - `styles/palette.css` — raw colour primitives.
 - `styles/theme.css` — semantic tokens (`--surface-raised`, `--text-muted`,
-  `--accent`, …), each declared once with `light-dark()`.
+  `--accent`, …) for the light theme on `:root`, overridden under
+  `[data-theme='dark']`.
 
-Because the tokens resolve from `color-scheme`, the OS preference is honoured on
-the first paint with no JavaScript. The header toggle only sets `color-scheme` on
-the root element and stores the choice in `localStorage`; a small inline script
-in `pages/_document.tsx` re-applies it before paint.
+A small inline script in `pages/_document.tsx` sets `data-theme` before the first
+paint, using the stored choice or the OS preference, so the correct theme is
+there from the first frame. The header toggle just flips that attribute and
+records the choice in `localStorage`.
 
 ## Content
 
