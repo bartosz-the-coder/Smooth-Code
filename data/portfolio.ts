@@ -26,7 +26,7 @@ export const portfolio: [Experience, ...Experience[]] = [
     technologies: [
       { name: 'React', iconName: 'react' },
       { name: 'TypeScript', iconName: 'typescript' },
-      { name: 'Styled Components', iconName: 'styledcomponents' },
+      { name: 'CSS-in-JS', iconName: 'cssinjs' },
       { name: 'GIT', iconName: 'git' },
     ],
   },
@@ -57,7 +57,7 @@ export const portfolio: [Experience, ...Experience[]] = [
       { name: 'React', iconName: 'react' },
       { name: 'TypeScript', iconName: 'typescript' },
       { name: 'CSS', iconName: 'css' },
-      { name: 'Styled Components', iconName: 'styledcomponents' },
+      { name: 'CSS-in-JS', iconName: 'cssinjs' },
       { name: 'GIT', iconName: 'git' },
       { name: 'T-SQL', iconName: 'tsql' },
       { name: 'Azure DevOps', iconName: 'azuredevops' },

@@ -1,6 +1,6 @@
 import { DiDotnet, DiJava, DiMsqlServer } from 'react-icons/di';
 import { ImGit, ImNpm } from 'react-icons/im';
-import { MdOutlinePattern } from 'react-icons/md';
+import { MdOutlineGroups, MdOutlinePattern } from 'react-icons/md';
 import {
   SiAndroid,
   SiAngular,
@@ -9,6 +9,7 @@ import {
   SiHtml5,
   SiJavascript,
   SiJenkins,
+  SiNextdotjs,
   SiReact,
   SiSqlite,
   SiStyledcomponents,
@@ -25,17 +26,19 @@ export const techIcons = {
   azuredevops: VscAzureDevops,
   csharp: TbBrandCSharp,
   css: SiCss,
+  cssinjs: SiStyledcomponents,
   dotnet: SiDotnet,
   git: ImGit,
   html5: SiHtml5,
   java: DiJava,
   javascript: SiJavascript,
   jenkins: SiJenkins,
+  leadership: MdOutlineGroups,
+  nextjs: SiNextdotjs,
   npm: ImNpm,
   patterns: MdOutlinePattern,
   react: SiReact,
   sqlite: SiSqlite,
-  styledcomponents: SiStyledcomponents,
   svn: SiSubversion,
   tsql: DiMsqlServer,
   typescript: SiTypescript,
