@@ -7,7 +7,8 @@ export const portfolio: [Experience, ...Experience[]] = [
     employer: 'Galaxy Digital',
     startDate: new Date(2021, 9, 1),
     endDate: null,
-    description: 'Development of cryptocurrency trading apps in React.',
+    description:
+      'Development of cryptocurrency trading apps in Next.js and React.',
     technologies: [
       { name: 'React', iconName: 'react' },
       { name: 'TypeScript', iconName: 'typescript' },

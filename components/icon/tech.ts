@@ -15,6 +15,7 @@ import {
   SiStyledcomponents,
   SiSubversion,
   SiTypescript,
+  SiVite,
 } from 'react-icons/si';
 import { TbBrandCSharp } from 'react-icons/tb';
 import { VscAzureDevops, VscCode } from 'react-icons/vsc';
@@ -42,5 +43,6 @@ export const techIcons = {
   svn: SiSubversion,
   tsql: DiMsqlServer,
   typescript: SiTypescript,
+  vite: SiVite,
   xaml: VscCode,
 };

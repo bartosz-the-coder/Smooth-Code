@@ -6,13 +6,14 @@ export const skills: Skill[] = [
   { name: 'JavaScript', icon: 'javascript', tier: 'Expert' },
   { name: 'Next.js', icon: 'nextjs', tier: 'Expert' },
   { name: 'CSS 3', icon: 'css', tier: 'Expert' },
+  { name: 'CSS-in-JS', icon: 'cssinjs', tier: 'Expert' },
   { name: 'Design patterns', icon: 'patterns', tier: 'Expert' },
 
   { name: 'C# / .NET', icon: 'csharp', tier: 'Advanced' },
   { name: 'WPF', icon: 'xaml', tier: 'Advanced' },
-  { name: 'CSS-in-JS', icon: 'cssinjs', tier: 'Advanced' },
   { name: 'HTML 5', icon: 'html5', tier: 'Advanced' },
   { name: 'Node package managers', icon: 'npm', tier: 'Advanced' },
+  { name: 'Vite', icon: 'vite', tier: 'Advanced' },
   { name: 'Git', icon: 'git', tier: 'Advanced' },
   { name: 'Technical leadership', icon: 'leadership', tier: 'Advanced' },
 
