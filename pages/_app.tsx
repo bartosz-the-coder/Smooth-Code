@@ -1,5 +1,7 @@
 import { AppType } from 'next/app';
 import Head from 'next/head';
+import clsx from 'clsx';
+import { Economica, IBM_Plex_Sans } from 'next/font/google';
 import { SiteFooter } from 'components/footer';
 import { SiteHeader } from 'components/header';
 
@@ -9,8 +11,32 @@ import 'styles/globals.css';
 const DESCRIPTION =
   'Bartosz Nowak — software engineer specialising in React, TypeScript and .NET. Skills, work history and contact details.';
 
+const economica = Economica({
+  weight: ['400', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  fallback: ['Oswald', 'Arial Narrow', 'sans-serif'],
+  variable: '--font-display',
+});
+
+const plexSans = IBM_Plex_Sans({
+  weight: ['400', '500', '600'],
+  subsets: ['latin'],
+  display: 'swap',
+  fallback: [
+    'system-ui',
+    '-apple-system',
+    'Segoe UI',
+    'Roboto',
+    'Helvetica',
+    'Arial',
+    'sans-serif',
+  ],
+  variable: '--font-body',
+});
+
 const SmoothApp: AppType = ({ Component, pageProps }) => (
-  <div className={styles.app}>
+  <div className={clsx(styles.app, economica.variable, plexSans.variable)}>
     <SmoothHead />
     <SiteHeader />
     <main className={styles.main}>
