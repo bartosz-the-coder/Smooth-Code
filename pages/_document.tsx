@@ -1,6 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
-
-const applyTheme = `try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.dataset.theme=t}catch(e){}`;
+import { themeBootstrapScript } from 'components/theme-switch/utils/theme-bootstrap';
 
 export default class SmoothDocument extends Document {
   render() {
@@ -26,19 +25,9 @@ export default class SmoothDocument extends Document {
             href="/favicon-16x16.png"
           />
           <link rel="manifest" href="/site.webmanifest" />
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossOrigin="anonymous"
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Economica:wght@400;700&display=swap"
-            rel="stylesheet"
-          />
         </Head>
         <body>
-          <script dangerouslySetInnerHTML={{ __html: applyTheme }} />
+          <script dangerouslySetInnerHTML={{ __html: themeBootstrapScript }} />
           <Main />
           <NextScript />
         </body>
