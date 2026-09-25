@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { ArrowIcon } from 'components/icon';
+import { Actions } from './components/actions';
 import { StatusDot } from './components/status-dot';
 import { Summary } from './components/summary';
 import { Tagline } from './components/tagline';
@@ -31,15 +31,7 @@ export const HeroSection: FC<HeroProps> = ({ role, yearsOfExperience }) => (
         <h1>Bartosz Nowak</h1>
         <Tagline />
         <Summary yearsOfExperience={yearsOfExperience} />
-        <div className={styles.actions}>
-          <a className={styles.primary} href="#contact">
-            Get in touch
-            <ArrowIcon aria-hidden />
-          </a>
-          <a className={styles.secondary} href="#portfolio">
-            See my work
-          </a>
-        </div>
+        <Actions />
       </div>
     </div>
   </section>
