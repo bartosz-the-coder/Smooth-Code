@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { Actions } from './components/actions';
+import { Copy } from './components/copy';
 import { StatusDot } from './components/status-dot';
 import { Summary } from './components/summary';
 import { Tagline } from './components/tagline';
@@ -23,7 +24,7 @@ export const HeroSection: FC<HeroProps> = ({ role, yearsOfExperience }) => (
         width={280}
         height={280}
       />
-      <div className={styles.copy}>
+      <Copy className={styles.copy}>
         <p className={styles.status}>
           <StatusDot />
           {role.title} at {role.employer}
@@ -32,7 +33,7 @@ export const HeroSection: FC<HeroProps> = ({ role, yearsOfExperience }) => (
         <Tagline />
         <Summary yearsOfExperience={yearsOfExperience} />
         <Actions />
-      </div>
+      </Copy>
     </div>
   </section>
 );

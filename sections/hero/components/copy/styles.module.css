@@ -1,0 +1,33 @@
+.copy > * {
+  animation: rise var(--duration-base) var(--ease-out) both;
+  animation-delay: max(0ms, (sibling-index() - 1) * 80ms - 20ms);
+}
+
+@supports not (animation-delay: calc(sibling-index() * 1ms)) {
+  .copy > *:nth-child(2) {
+    animation-delay: 60ms;
+  }
+
+  .copy > *:nth-child(3) {
+    animation-delay: 140ms;
+  }
+
+  .copy > *:nth-child(4) {
+    animation-delay: 220ms;
+  }
+
+  .copy > *:nth-child(n + 5) {
+    animation-delay: 300ms;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
