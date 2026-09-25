@@ -89,6 +89,14 @@
   --header-height: 4rem;
   --content-width: 68rem;
 
+  --brand-mark-size: 2.25rem;
+  --hero-logo-size: min(17.5rem, 30vw);
+
+  --hero-logo-flight: 13dvh;
+  --hero-logo-clearance: var(--space-2);
+  --hero-logo-handoff: calc(var(--hero-logo-flight) * 0.88);
+  --hero-logo-handoff-end: calc(var(--hero-logo-flight) * 0.94);
+
   --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
   --duration-fast: 120ms;
   --duration-base: 220ms;
@@ -98,4 +106,10 @@
     background-color var(--duration-slow) var(--ease-out),
     border-color var(--duration-slow) var(--ease-out),
     color var(--duration-slow) var(--ease-out);
+}
+
+@media (width < 52rem) {
+  :root {
+    --hero-logo-size: min(8.75rem, 34vw);
+  }
 }

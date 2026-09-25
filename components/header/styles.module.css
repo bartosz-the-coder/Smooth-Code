@@ -20,6 +20,7 @@
 .pill {
   position: relative;
   z-index: 0;
+  anchor-name: --header-pill;
   display: flex;
   align-items: center;
   gap: var(--space-5);

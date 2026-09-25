@@ -15,14 +15,16 @@ type HeroProps = {
 export const HeroSection: FC<HeroProps> = ({ role, yearsOfExperience }) => (
   <section id="top" className={styles.hero}>
     <div className={styles.inner}>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        className={styles.logo}
-        src="/assets/logo.png"
-        alt="Smooth Code"
-        width={280}
-        height={280}
-      />
+      <div className={styles.logoFrame}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          className={styles.logo}
+          src="/assets/logo.png"
+          alt="Smooth Code"
+          width={280}
+          height={280}
+        />
+      </div>
       <div className={styles.copy}>
         <p className={styles.status}>
           <StatusDot />

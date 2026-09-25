@@ -17,10 +17,43 @@
   padding-inline: var(--space-5);
 }
 
-.logo {
+.logoFrame {
   grid-area: 1 / 2;
-  width: min(280px, 30vw);
+  width: var(--hero-logo-size);
+  aspect-ratio: 1;
+  anchor-name: --hero-logo;
+}
+
+.logo {
+  display: block;
+  width: 100%;
   height: auto;
+}
+
+@supports (anchor-name: --a) and (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .logo {
+      position: fixed;
+      z-index: 11;
+      top: anchor(--hero-logo top);
+      left: anchor(--hero-logo left);
+      width: anchor-size(--hero-logo width);
+      height: anchor-size(--hero-logo height);
+      pointer-events: none;
+      animation-name: lift-to-header, sweep-to-brand, hand-over;
+      animation-duration: 1ms;
+      animation-fill-mode: both;
+      animation-timing-function:
+        linear,
+        cubic-bezier(0.8, 0, 0.25, 1),
+        linear;
+      animation-timeline: scroll(root block);
+      animation-range:
+        0 var(--hero-logo-flight),
+        0 var(--hero-logo-flight),
+        var(--hero-logo-handoff-end) var(--hero-logo-flight);
+    }
+  }
 }
 
 .copy {
@@ -103,6 +136,43 @@
   color: var(--accent);
 }
 
+@keyframes lift-to-header {
+  0% {
+    top: anchor(--hero-logo top);
+    width: anchor-size(--hero-logo width);
+    height: anchor-size(--hero-logo height);
+    animation-timing-function: ease-out;
+  }
+  50% {
+    top: calc(anchor(--header-pill bottom) + var(--hero-logo-clearance));
+    width: anchor-size(--brand-mark width);
+    height: anchor-size(--brand-mark height);
+    animation-timing-function: ease-in-out;
+  }
+  88%,
+  100% {
+    top: anchor(--brand-mark top);
+    width: anchor-size(--brand-mark width);
+    height: anchor-size(--brand-mark height);
+  }
+}
+
+@keyframes sweep-to-brand {
+  0% {
+    left: anchor(--hero-logo left);
+  }
+  85%,
+  100% {
+    left: anchor(--brand-mark left);
+  }
+}
+
+@keyframes hand-over {
+  to {
+    opacity: 0;
+  }
+}
+
 @keyframes rise {
   from {
     opacity: 0;
@@ -121,9 +191,8 @@
     gap: var(--space-6);
   }
 
-  .logo {
+  .logoFrame {
     grid-area: 1 / 1;
-    width: min(140px, 34vw);
   }
 
   .copy {

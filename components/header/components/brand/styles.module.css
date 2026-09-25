@@ -9,7 +9,30 @@
 
 .mark {
   flex-shrink: 0;
+  width: var(--brand-mark-size);
+  height: var(--brand-mark-size);
   border-radius: var(--radius-full);
+  anchor-name: --brand-mark;
+}
+
+@supports (anchor-name: --a) and (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .mark {
+      opacity: 0;
+      animation-name: take-over;
+      animation-duration: 1ms;
+      animation-fill-mode: both;
+      animation-timing-function: linear;
+      animation-timeline: scroll(root block);
+      animation-range: var(--hero-logo-handoff) var(--hero-logo-handoff-end);
+    }
+  }
+}
+
+@keyframes take-over {
+  to {
+    opacity: 1;
+  }
 }
 
 .wordmark {
