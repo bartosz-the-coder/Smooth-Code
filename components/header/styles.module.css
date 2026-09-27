@@ -1,11 +1,14 @@
 .header {
-  --pill-width: 56rem;
   --pill-gutter: var(--space-4);
   --surface: color-mix(in srgb, var(--surface-base) 92%, transparent);
 
   position: sticky;
   top: 0;
   z-index: 10;
+  display: flex;
+  justify-content: center;
+  /* Caps the flex line at --content-width so the pill's shrink starts right away */
+  padding-inline: max(0px, 50% - var(--content-width) / 2);
 }
 
 .header::before {
@@ -21,12 +24,11 @@
   position: relative;
   z-index: 0;
   display: flex;
+  flex-grow: 1;
   align-items: center;
   gap: var(--space-5);
-  width: 100%;
+  max-width: 100%;
   height: var(--header-height);
-  max-width: var(--content-width);
-  margin-inline: auto;
   padding-inline: var(--space-5);
 }
 
@@ -69,10 +71,11 @@
   }
 }
 
+/* flex-grow 1 → 0 interpolates smoothly down to the pill's content width */
 @keyframes shrink-and-drop {
   to {
-    width: calc(100% - var(--pill-gutter) * 2);
-    max-width: var(--pill-width);
+    flex-grow: 0;
+    max-width: calc(100% - var(--pill-gutter) * 2);
     translate: 0 var(--pill-gutter);
   }
 }
